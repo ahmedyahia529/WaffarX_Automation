@@ -1,544 +1,299 @@
 
+
 <!DOCTYPE html>
 
 <html>
 
 <head>
 
-<meta charset="UTF-8">
-
-<title>WaffarX Automation Report</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>
+WaffarX Automation Dashboard
+</title>
 
 <style>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+body{
+
+font-family:Arial;
+background:#eef3f8;
+padding:40px;
+
 }
 
-body{
-    font-family:'Poppins',sans-serif;
-    background:#eef3f8;
-    color:#222;
-    padding:40px;
-}
 
 .container{
-    max-width:1500px;
-    margin:auto;
+
+max-width:1200px;
+margin:auto;
+
 }
 
-.header{
-    background:linear-gradient(135deg,#005bea,#00c6fb);
-    color:white;
-    padding:35px;
-    border-radius:18px;
-    box-shadow:0 12px 35px rgba(0,0,0,.20);
-}
-
-.header h1{
-    font-size:38px;
-}
-
-.header p{
-    margin-top:10px;
-    font-size:17px;
-    opacity:.95;
-}
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-    margin-top:30px;
-}
 
 .card{
-    background:white;
-    border-radius:15px;
-    padding:22px;
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
-    transition:.3s;
+
+background:white;
+padding:25px;
+margin-top:25px;
+border-radius:15px;
+
+box-shadow:0 5px 20px #ddd;
+
 }
 
-.card:hover{
-    transform:translateY(-6px);
-}
-
-.card span{
-    color:#777;
-    font-size:14px;
-}
-
-.card h2{
-    margin-top:12px;
-    font-size:30px;
-}
-
-.blue{border-left:6px solid #007bff;}
-.green{border-left:6px solid #28a745;}
-.red{border-left:6px solid #dc3545;}
-.orange{border-left:6px solid #ff9800;}
-.purple{border-left:6px solid #7b1fa2;}
-.cyan{border-left:6px solid #00bcd4;}
-
-.progress-container{
-    margin-top:35px;
-}
-
-.progress-title{
-    display:flex;
-    justify-content:space-between;
-    margin-bottom:10px;
-    font-weight:600;
-}
-
-.progress{
-    height:25px;
-    background:#ddd;
-    border-radius:30px;
-    overflow:hidden;
-}
-
-.progress-bar{
-    height:100%;
-    width:100.0%;
-    background:linear-gradient(90deg,#00c853,#64dd17);
-    border-radius:30px;
-}
-
-.table-box{
-    margin-top:40px;
-    background:white;
-    border-radius:18px;
-    overflow:hidden;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-}
-
-table{
-    width:100%;
-    border-collapse:collapse;
-}
-
-thead{
-    background:#005bea;
-    color:white;
-}
-
-th{
-    padding:18px;
-    font-size:16px;
-}
-
-td{
-    padding:18px;
-    border-bottom:1px solid #eee;
-    text-align:center;
-}
-
-tbody tr:hover{
-    background:#f5f9ff;
-}
 
 .pass{
-    color:#28a745;
-    font-weight:bold;
+
+color:green;
+font-weight:bold;
+
 }
+
 
 .fail{
-    color:#dc3545;
-    font-weight:bold;
+
+color:red;
+font-weight:bold;
+
 }
 
-.badge-pass{
-    background:#d4edda;
-    color:#28a745;
-    padding:8px 18px;
-    border-radius:25px;
-    font-weight:600;
+
+table{
+
+width:100%;
+border-collapse:collapse;
+
 }
 
-.badge-fail{
-    background:#f8d7da;
-    color:#dc3545;
-    padding:8px 18px;
-    border-radius:25px;
-    font-weight:600;
+
+th{
+
+background:#005bea;
+color:white;
+padding:15px;
+
 }
+
+
+td{
+
+padding:15px;
+text-align:center;
+border-bottom:1px solid #ddd;
+
+}
+
 
 a{
-    text-decoration:none;
-    background:#007bff;
-    color:white;
-    padding:8px 15px;
-    border-radius:8px;
-    transition:.3s;
-}
 
-a:hover{
-    background:#0056b3;
-}
+background:#007bff;
+color:white;
+padding:8px 15px;
+border-radius:8px;
+text-decoration:none;
 
-.footer{
-    margin-top:40px;
-    text-align:center;
-    color:#666;
-    font-size:14px;
 }
 
 </style>
 
 </head>
 
+
 <body>
+
 
 <div class="container">
 
 
-        <div class="header">
+<h1>
+🚀 WaffarX Automation Dashboard
+</h1>
 
-            <h1>🚀 WaffarX Automation Report</h1>
 
-            <p>
-                Generated Automatically after Automation Execution
-            </p>
 
-        </div>
+<div class="card">
 
 
-        <div class="cards">
+<h2>
+Latest Run
+</h2>
 
-            <div class="card blue">
 
-                <span>Execution Time</span>
+<p>
+Date:
+13-07-2026 04:58:19 AM
+</p>
 
-                <p>2026-07-13 04:26:40</p>
 
-            </div>
+<p>
+Status:
+<span class="pass">
+PASS
+</span>
+</p>
 
 
-            <div class="card cyan">
+<p>
+Pass Rate:
+100.0%
+</p>
 
-                <span>Execution Duration</span>
 
-                <h2>52.04s</h2>
+</div>
 
-            </div>
 
 
-            <div class="card green">
+<div class="card">
 
-                <span>Passed</span>
 
-                <h2>11</h2>
+<h2>
+Previous Runs
+</h2>
 
-            </div>
 
+<table>
 
-            <div class="card red">
 
-                <span>Failed</span>
+<tr>
 
-                <h2>0</h2>
+<th>
+Run
+</th>
 
-            </div>
+<th>
+Date
+</th>
 
+<th>
+Status
+</th>
 
-            <div class="card orange">
+<th>
+Pass Rate
+</th>
 
-                <span>Total Tests</span>
+<th>
+Report
+</th>
 
-                <h2>11</h2>
+</tr>
 
-            </div>
 
 
-            <div class="card purple">
 
-                <span>Pass Rate</span>
+<tr>
 
-                <h2>100.0%</h2>
+<td>
+Run #1
+</td>
 
-            </div>
 
-        </div>
+<td>
+13-07-2026 04:26:40 AM
+</td>
 
 
-        <div class="progress-container">
+<td class="pass">
+PASS
+</td>
 
-            <div class="progress-title">
 
-                <span>Automation Success Rate</span>
+<td>
+100.0%
+</td>
 
-                <span>100.0%</span>
 
-            </div>
+<td>
 
-            <div class="progress">
+<a href="reports/report_2026-07-13_04-26-40.html">
+📄 View
+</a>
 
-                <div class="progress-bar"></div>
+</td>
 
-            </div>
 
-        </div>
+</tr>
 
 
-        <div class="table-box">
 
-        <table>
+<tr>
 
-        <thead>
+<td>
+Run #2
+</td>
 
-        <tr>
 
-        <th>#</th>
+<td>
+13-07-2026 04:41:55 AM
+</td>
 
-        <th>Test Case</th>
 
-        <th>Status</th>
+<td class="pass">
+PASS
+</td>
 
-        <th>Screenshot</th>
 
-        </tr>
+<td>
+100.0%
+</td>
 
-        </thead>
 
-        <tbody>
+<td>
 
-        
-        <tr>
+<a href="reports/report_2026-07-13_04-41-55.html">
+📄 View
+</a>
 
-        <td>1</td>
+</td>
 
-        <td style="text-align:left;font-weight:500;">
-            Signup Page Open
-        </td>
 
-        <td>
-            <span class="badge-pass">PASS</span>
-        </td>
+</tr>
 
-        <td>
-            <span style="color:#999;">—</span>
-        </td>
 
-        </tr>
-        
-        <tr>
 
-        <td>2</td>
+<tr>
 
-        <td style="text-align:left;font-weight:500;">
-            Empty Signup Fields
-        </td>
+<td>
+Run #3
+</td>
 
-        <td>
-            <span class="badge-pass">PASS</span>
-        </td>
 
-        <td>
-            <span style="color:#999;">—</span>
-        </td>
+<td>
+13-07-2026 04:58:19 AM
+</td>
 
-        </tr>
-        
-        <tr>
 
-        <td>3</td>
+<td class="pass">
+PASS
+</td>
 
-        <td style="text-align:left;font-weight:500;">
-            Empty Name
-        </td>
 
-        <td>
-            <span class="badge-pass">PASS</span>
-        </td>
+<td>
+100.0%
+</td>
 
-        <td>
-            <span style="color:#999;">—</span>
-        </td>
 
-        </tr>
-        
-        <tr>
+<td>
 
-        <td>4</td>
+<a href="reports/report_2026-07-13_04-58-19.html">
+📄 View
+</a>
 
-        <td style="text-align:left;font-weight:500;">
-            Empty Email
-        </td>
+</td>
 
-        <td>
-            <span class="badge-pass">PASS</span>
-        </td>
 
-        <td>
-            <span style="color:#999;">—</span>
-        </td>
+</tr>
 
-        </tr>
-        
-        <tr>
 
-        <td>5</td>
 
-        <td style="text-align:left;font-weight:500;">
-            Empty Password
-        </td>
+</table>
 
-        <td>
-            <span class="badge-pass">PASS</span>
-        </td>
+</div>
 
-        <td>
-            <span style="color:#999;">—</span>
-        </td>
 
-        </tr>
-        
-        <tr>
+</div>
 
-        <td>6</td>
 
-        <td style="text-align:left;font-weight:500;">
-            Invalid Email Format
-        </td>
+</body>
 
-        <td>
-            <span class="badge-pass">PASS</span>
-        </td>
+</html>
 
-        <td>
-            <span style="color:#999;">—</span>
-        </td>
-
-        </tr>
-        
-        <tr>
-
-        <td>7</td>
-
-        <td style="text-align:left;font-weight:500;">
-            Short Password
-        </td>
-
-        <td>
-            <span class="badge-pass">PASS</span>
-        </td>
-
-        <td>
-            <span style="color:#999;">—</span>
-        </td>
-
-        </tr>
-        
-        <tr>
-
-        <td>8</td>
-
-        <td style="text-align:left;font-weight:500;">
-            Long Password
-        </td>
-
-        <td>
-            <span class="badge-pass">PASS</span>
-        </td>
-
-        <td>
-            <span style="color:#999;">—</span>
-        </td>
-
-        </tr>
-        
-        <tr>
-
-        <td>9</td>
-
-        <td style="text-align:left;font-weight:500;">
-            Existing Email
-        </td>
-
-        <td>
-            <span class="badge-pass">PASS</span>
-        </td>
-
-        <td>
-            <span style="color:#999;">—</span>
-        </td>
-
-        </tr>
-        
-        <tr>
-
-        <td>10</td>
-
-        <td style="text-align:left;font-weight:500;">
-            Existing Mobile
-        </td>
-
-        <td>
-            <span class="badge-pass">PASS</span>
-        </td>
-
-        <td>
-            <span style="color:#999;">—</span>
-        </td>
-
-        </tr>
-        
-        <tr>
-
-        <td>11</td>
-
-        <td style="text-align:left;font-weight:500;">
-            Valid Signup
-        </td>
-
-        <td>
-            <span class="badge-pass">PASS</span>
-        </td>
-
-        <td>
-            <span style="color:#999;">—</span>
-        </td>
-
-        </tr>
-        
-
-                </tbody>
-
-                </table>
-
-                </div>
-
-                <div class="footer">
-
-                    <hr style="margin-bottom:20px;border:none;border-top:1px solid #ddd;">
-
-                    <p>
-                        © 2026 <strong>WaffarX Automation Framework</strong>
-                    </p>
-
-                    <p>
-                        📅 Generated on
-                        <strong>13 Jul 2026 - 04:26:40 AM</strong>
-                    </p>
-
-                    <p style="margin-top:10px;font-size:15px;color:#444;">
-                        👨‍💻 Tester :
-                        <strong style="color:#005bea;">
-                            Nohair Gamal
-                        </strong>
-                    </p>
-
-                </div>
-
-        </div>
-
-        </body>
-
-        </html>
-        
