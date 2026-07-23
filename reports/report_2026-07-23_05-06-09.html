@@ -1,0 +1,1361 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>WaffarX Automation Report</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#eef3f8;
+    color:#222;
+    padding:40px;
+}
+
+.container{
+    max-width:1500px;
+    margin:auto;
+}
+
+.header{
+    background:linear-gradient(135deg,#005bea,#00c6fb);
+    color:white;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 12px 35px rgba(0,0,0,.20);
+}
+
+.header h1{
+    font-size:38px;
+}
+
+.header p{
+    margin-top:10px;
+    font-size:17px;
+    opacity:.95;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-top:30px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    padding:22px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+.card span{
+    color:#777;
+    font-size:14px;
+}
+
+.card h2{
+    margin-top:12px;
+    font-size:30px;
+}
+
+.blue{border-left:6px solid #007bff;}
+.green{border-left:6px solid #28a745;}
+.red{border-left:6px solid #dc3545;}
+.orange{border-left:6px solid #ff9800;}
+.purple{border-left:6px solid #7b1fa2;}
+.cyan{border-left:6px solid #00bcd4;}
+
+.progress-container{
+    margin-top:35px;
+}
+
+.progress-title{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:10px;
+    font-weight:600;
+}
+
+.progress{
+    height:25px;
+    background:#ddd;
+    border-radius:30px;
+    overflow:hidden;
+}
+
+.progress-bar{
+    height:100%;
+    width:100.0%;
+    background:linear-gradient(90deg,#00c853,#64dd17);
+    border-radius:30px;
+}
+
+.table-box{
+    margin-top:40px;
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+thead{
+    background:#005bea;
+    color:white;
+}
+
+th{
+    padding:18px;
+    font-size:16px;
+}
+
+td{
+    padding:18px;
+    border-bottom:1px solid #eee;
+    text-align:center;
+}
+
+tbody tr:hover{
+    background:#f5f9ff;
+}
+
+.pass{
+    color:#28a745;
+    font-weight:bold;
+}
+
+.fail{
+    color:#dc3545;
+    font-weight:bold;
+}
+
+.badge-pass{
+    background:#d4edda;
+    color:#28a745;
+    padding:8px 18px;
+    border-radius:25px;
+    font-weight:600;
+}
+
+.badge-fail{
+    background:#f8d7da;
+    color:#dc3545;
+    padding:8px 18px;
+    border-radius:25px;
+    font-weight:600;
+}
+
+a{
+    text-decoration:none;
+    background:#007bff;
+    color:white;
+    padding:8px 15px;
+    border-radius:8px;
+    transition:.3s;
+}
+
+a:hover{
+    background:#0056b3;
+}
+
+.footer{
+    margin-top:40px;
+    text-align:center;
+    color:#666;
+    font-size:14px;
+}
+
+.details-btn{
+    background:#005bea;
+    color:white;
+    border:none;
+    padding:8px 14px;
+    border-radius:8px;
+    cursor:pointer;
+    font-family:'Poppins',sans-serif;
+}
+
+.details-btn:hover{
+    background:#0045b5;
+}
+
+.details-row{
+    display:none;
+    background:#f7f9fc;
+}
+
+.details-content{
+    text-align:left;
+    padding:20px;
+    font-size:14px;
+    line-height:1.8;
+    white-space:pre-wrap;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+
+        <div class="header">
+
+            <h1>🚀 WaffarX Automation Report</h1>
+
+            <p>
+                Generated Automatically after Automation Execution
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card blue">
+
+                <span>Execution Time</span>
+
+                <p>2026-07-23 05:06:09</p>
+
+            </div>
+
+
+            <div class="card cyan">
+
+                <span>Execution Duration</span>
+
+                <h2>183.00s</h2>
+
+            </div>
+
+
+            <div class="card green">
+
+                <span>Passed</span>
+
+                <h2>7</h2>
+
+            </div>
+
+
+            <div class="card red">
+
+                <span>Failed</span>
+
+                <h2>0</h2>
+
+            </div>
+
+
+            <div class="card orange">
+
+                <span>Total Tests</span>
+
+                <h2>7</h2>
+
+            </div>
+
+
+            <div class="card purple">
+
+                <span>Pass Rate</span>
+
+                <h2>100.0%</h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="progress-container">
+
+            <div class="progress-title">
+
+                <span>Automation Success Rate</span>
+
+                <span>100.0%</span>
+
+            </div>
+
+            <div class="progress">
+
+                <div class="progress-bar"></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="table-box">
+
+        <table>
+
+        <thead>
+
+        <tr>
+
+        <th>#</th>
+
+        <th>Test Case</th>
+
+        <th>Status</th>
+
+        <th>Screenshot</th>
+        <th>Details</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        
+        <tr>
+
+        <td>1</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Open Home Page
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_1')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_1" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Open Home Test
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Open Home Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        <tr>
+
+        <td>2</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Footer About
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_2')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_2" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Footer - About WaffarX
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Checking About WaffarX
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] About WaffarX Passed
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Checking Terms & Conditions
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Terms & Conditions Passed
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Checking Privacy Policy
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Privacy Policy Passed
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Checking Contact Us
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Contact Us Passed
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Checking Press Room
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Press Room Passed
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Checking Blog
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Blog Passed
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Footer About WaffarX Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        <tr>
+
+        <td>3</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Footer Now Available
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_3')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_3" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Footer - Now Available
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Checking The X button
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Footer Now Available Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        <tr>
+
+        <td>4</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Footer Special Pages
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_4')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_4" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Footer - Special Pages
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Checking Travel & Vacations
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Checking Black Friday
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Footer Special Pages Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        <tr>
+
+        <td>5</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Footer Trending Stores
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_5')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_5" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Footer - Trending Stores
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Checking Amazon.eg
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Checking Kenzz
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Checking 2B Egypt
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Checking SheIn
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Checking Jumia
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Checking All Stores
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Footer Trending Stores Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        <tr>
+
+        <td>6</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Footer All Categories
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_6')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_6" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Footer - All Categories
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Checking Women's Clothing
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Checking Men's Clothing
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Checking Travel & Vacations
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Checking Health & Beauty
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Checking Shoes & Handbags
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Checking Electronics & Computers
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Checking Home, Garden & Tools
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Checking Baby, Kids & Toys
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Checking Sports & Outdoors
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Checking Office Supplies
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Checking Others
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Footer All Categories Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        <tr>
+
+        <td>7</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Footer Social Media
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_7')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_7" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Footer - Social Media
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Checking Twitter
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Twitter Passed
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Checking Instagram
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Instagram Passed
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Checking YouTube
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] YouTube Passed
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Checking Telegram
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Telegram Passed
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Footer Social Media Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+
+                </tbody>
+
+                </table>
+
+                </div>
+
+                <div class="footer">
+
+                    <hr style="margin-bottom:20px;border:none;border-top:1px solid #ddd;">
+
+                    <p>
+                        © 2026 <strong>WaffarX Automation Framework</strong>
+                    </p>
+
+                    <p>
+                        📅 Generated on
+                        <strong>23 Jul 2026 - 05:06:09 AM</strong>
+                    </p>
+
+                    <p style="margin-top:10px;font-size:15px;color:#444;">
+                        👨‍💻 Tester :
+                        <strong style="color:#005bea;">
+                            Nohair Gamal
+                        </strong>
+                    </p>
+
+                </div>
+
+        </div>
+        <script>
+
+        function toggleDetails(id){
+
+            const row = document.getElementById(id);
+
+            if(row.style.display === "table-row"){
+
+                row.style.display = "none";
+
+            }else{
+
+                row.style.display = "table-row";
+
+            }
+
+        }
+
+        </script>
+
+        </body>
+
+        </html>
+        
