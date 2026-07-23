@@ -93,6 +93,41 @@ text-decoration:none;
 
 }
 
+.info-grid{
+
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+margin-bottom:25px;
+
+}
+
+.info-box{
+
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 5px 20px #ddd;
+text-align:center;
+
+}
+
+.info-title{
+
+font-size:14px;
+color:#777;
+margin-bottom:8px;
+
+}
+
+.info-value{
+
+font-size:20px;
+font-weight:bold;
+color:#005bea;
+
+}
+
 </style>
 
 </head>
@@ -104,10 +139,97 @@ text-decoration:none;
 <div class="container">
 
 
-<h1>
+<div style="
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+">
+
+<div>
+
+<h1 style="margin:0;">
 🚀 WaffarX Automation Dashboard
 </h1>
 
+<div style="
+color:#777;
+font-size:15px;
+margin-top:5px;
+">
+Enterprise Test Automation Framework
+</div>
+
+</div>
+
+<div style="
+background:#005bea;
+color:white;
+padding:10px 18px;
+border-radius:30px;
+font-weight:bold;
+font-size:15px;
+">
+WaffarX
+</div>
+
+</div>
+
+
+<div class="info-grid">
+
+<div class="info-box">
+
+<div class="info-title">
+Project
+</div>
+
+<div class="info-value">
+WaffarX
+</div>
+
+</div>
+
+
+<div class="info-box">
+
+<div class="info-title">
+Framework
+</div>
+
+<div class="info-value">
+Python + Selenium
+</div>
+
+</div>
+
+
+<div class="info-box">
+
+<div class="info-title">
+Architecture
+</div>
+
+<div class="info-value">
+POM
+</div>
+
+</div>
+
+
+<div class="info-box">
+
+<div class="info-title">
+Version
+</div>
+
+<div class="info-value">
+v1.0
+</div>
+
+</div>
+
+</div>
 
 
 <div class="card">
@@ -120,7 +242,7 @@ Latest Run
 
 <p>
 Date:
-23-07-2026 05:06:09 AM
+23-07-2026 05:52:01 PM
 </p>
 
 
@@ -177,41 +299,6 @@ Report
 
 </tr>
 
-
-
-
-<tr>
-
-<td>
-Build #81
-</td>
-
-
-<td>
-15-07-2026 04:12:42 PM
-</td>
-
-
-<td class="pass">
-PASS
-</td>
-
-
-<td>
-100.0%
-</td>
-
-
-<td>
-
-<a href="reports/report_2026-07-15_16-12-42.html">
-📄 View
-</a>
-
-</td>
-
-
-</tr>
 
 
 
@@ -1045,6 +1132,41 @@ PASS
 <td>
 
 <a href="reports/report_2026-07-23_05-06-09.html">
+📄 View
+</a>
+
+</td>
+
+
+</tr>
+
+
+
+<tr>
+
+<td>
+Build #106
+</td>
+
+
+<td>
+23-07-2026 05:52:01 PM
+</td>
+
+
+<td class="pass">
+PASS
+</td>
+
+
+<td>
+100.0%
+</td>
+
+
+<td>
+
+<a href="reports/report_2026-07-23_17-52-01.html">
 📄 View
 </a>
 
