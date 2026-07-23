@@ -1,0 +1,1588 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>WaffarX Automation Report</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#eef3f8;
+    color:#222;
+    padding:40px;
+}
+
+.container{
+    max-width:1500px;
+    margin:auto;
+}
+
+.header{
+    background:linear-gradient(135deg,#005bea,#00c6fb);
+    color:white;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 12px 35px rgba(0,0,0,.20);
+}
+
+.header h1{
+    font-size:38px;
+}
+
+.header p{
+    margin-top:10px;
+    font-size:17px;
+    opacity:.95;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-top:30px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    padding:22px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+.card span{
+    color:#777;
+    font-size:14px;
+}
+
+.card h2{
+    margin-top:12px;
+    font-size:30px;
+}
+
+.blue{border-left:6px solid #007bff;}
+.green{border-left:6px solid #28a745;}
+.red{border-left:6px solid #dc3545;}
+.orange{border-left:6px solid #ff9800;}
+.purple{border-left:6px solid #7b1fa2;}
+.cyan{border-left:6px solid #00bcd4;}
+
+.progress-container{
+    margin-top:35px;
+}
+
+.progress-title{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:10px;
+    font-weight:600;
+}
+
+.progress{
+    height:25px;
+    background:#ddd;
+    border-radius:30px;
+    overflow:hidden;
+}
+
+.progress-bar{
+    height:100%;
+    width:100.0%;
+    background:linear-gradient(90deg,#00c853,#64dd17);
+    border-radius:30px;
+}
+
+.table-box{
+    margin-top:40px;
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+thead{
+    background:#005bea;
+    color:white;
+}
+
+th{
+    padding:18px;
+    font-size:16px;
+}
+
+td{
+    padding:18px;
+    border-bottom:1px solid #eee;
+    text-align:center;
+}
+
+tbody tr:hover{
+    background:#f5f9ff;
+}
+
+.pass{
+    color:#28a745;
+    font-weight:bold;
+}
+
+.fail{
+    color:#dc3545;
+    font-weight:bold;
+}
+
+.badge-pass{
+    background:#d4edda;
+    color:#28a745;
+    padding:8px 18px;
+    border-radius:25px;
+    font-weight:600;
+}
+
+.badge-fail{
+    background:#f8d7da;
+    color:#dc3545;
+    padding:8px 18px;
+    border-radius:25px;
+    font-weight:600;
+}
+
+a{
+    text-decoration:none;
+    background:#007bff;
+    color:white;
+    padding:8px 15px;
+    border-radius:8px;
+    transition:.3s;
+}
+
+a:hover{
+    background:#0056b3;
+}
+
+.footer{
+    margin-top:40px;
+    text-align:center;
+    color:#666;
+    font-size:14px;
+}
+
+.details-btn{
+    background:#005bea;
+    color:white;
+    border:none;
+    padding:8px 14px;
+    border-radius:8px;
+    cursor:pointer;
+    font-family:'Poppins',sans-serif;
+}
+
+.details-btn:hover{
+    background:#0045b5;
+}
+
+.details-row{
+    display:none;
+    background:#f7f9fc;
+}
+
+.details-content{
+    text-align:left;
+    padding:20px;
+    font-size:14px;
+    line-height:1.8;
+    white-space:pre-wrap;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+
+        <div class="header">
+
+            <h1>🚀 WaffarX Automation Report</h1>
+
+            <p>
+                Generated Automatically after Automation Execution
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card blue">
+
+                <span>Execution Time</span>
+
+                <p>2026-07-23 04:56:54</p>
+
+            </div>
+
+
+            <div class="card cyan">
+
+                <span>Execution Duration</span>
+
+                <h2>78.58s</h2>
+
+            </div>
+
+
+            <div class="card green">
+
+                <span>Passed</span>
+
+                <h2>5</h2>
+
+            </div>
+
+
+            <div class="card red">
+
+                <span>Failed</span>
+
+                <h2>0</h2>
+
+            </div>
+
+
+            <div class="card orange">
+
+                <span>Total Tests</span>
+
+                <h2>5</h2>
+
+            </div>
+
+
+            <div class="card purple">
+
+                <span>Pass Rate</span>
+
+                <h2>100.0%</h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="progress-container">
+
+            <div class="progress-title">
+
+                <span>Automation Success Rate</span>
+
+                <span>100.0%</span>
+
+            </div>
+
+            <div class="progress">
+
+                <div class="progress-bar"></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="table-box">
+
+        <table>
+
+        <thead>
+
+        <tr>
+
+        <th>#</th>
+
+        <th>Test Case</th>
+
+        <th>Status</th>
+
+        <th>Screenshot</th>
+        <th>Details</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        
+        <tr>
+
+        <td>1</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Change Language
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_1')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_1" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Change Language
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Login Required
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Change Language from English to Arabic and Reverse Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+            <tr>
+
+            <td>1</td>
+
+            <td style="text-align:left;font-weight:500;">
+                Change Language
+            </td>
+
+            <td>
+                
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+            </td>
+
+            <td>
+                <span style="color:#999;">—</span>
+            </td>
+
+            <td>
+                <button
+                    onclick="toggleDetails('details_1')"
+                    style="
+                        background:#005bea;
+                        color:white;
+                        border:none;
+                        padding:8px 14px;
+                        border-radius:8px;
+                        cursor:pointer;
+                    ">
+                    Show
+                </button>
+            </td>
+
+            </tr>
+            
+        <tr>
+
+        <td>2</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Change Country UAE
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_2')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_2" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Change Country - UAE
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 1 - Change Country
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Popup Not Found
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Selecting UAE
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] UAE Clicked
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Current Country : UAE
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 2 - Wait Amazon.ae Link
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 3 - Wait Amazon.ae Logo
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 4 - Amazon.ae Logo Found
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 5 - Open Amazon.ae
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Store Step 1
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Store Step 2 - Waiting New Tab
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Store Step 3 - Waiting Redirect
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Waiting Popup
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Popup Not Found
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 6 - Store Opened
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Change Country UAE Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+            <tr>
+
+            <td>2</td>
+
+            <td style="text-align:left;font-weight:500;">
+                Change Country UAE
+            </td>
+
+            <td>
+                
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+            </td>
+
+            <td>
+                <span style="color:#999;">—</span>
+            </td>
+
+            <td>
+                <button
+                    onclick="toggleDetails('details_2')"
+                    style="
+                        background:#005bea;
+                        color:white;
+                        border:none;
+                        padding:8px 14px;
+                        border-radius:8px;
+                        cursor:pointer;
+                    ">
+                    Show
+                </button>
+            </td>
+
+            </tr>
+            
+        <tr>
+
+        <td>3</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Change Country KSA
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_3')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_3" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Change Country - KSA
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 1 - Change Country
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Popup Found
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Popup Closed
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Selecting KSA
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] KSA Clicked
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Current Country : KSA
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 2 - Wait Amazon.sa Link
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 3 - Wait Amazon.sa Logo
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 4 - Amazon.sa Logo Found
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 5 - Open Amazon.sa
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Store Step 1
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Store Step 2 - Waiting New Tab
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Store Step 3 - Waiting Redirect
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Waiting Popup
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Popup Not Found
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 6 - Store Opened
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Change Country KSA Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+            <tr>
+
+            <td>3</td>
+
+            <td style="text-align:left;font-weight:500;">
+                Change Country KSA
+            </td>
+
+            <td>
+                
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+            </td>
+
+            <td>
+                <span style="color:#999;">—</span>
+            </td>
+
+            <td>
+                <button
+                    onclick="toggleDetails('details_3')"
+                    style="
+                        background:#005bea;
+                        color:white;
+                        border:none;
+                        padding:8px 14px;
+                        border-radius:8px;
+                        cursor:pointer;
+                    ">
+                    Show
+                </button>
+            </td>
+
+            </tr>
+            
+        <tr>
+
+        <td>4</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Change Country KW
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_4')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_4" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Change Country - KW
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 1 - Change Country
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Popup Found
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Popup Closed
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Selecting KW
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] KW Clicked
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Current Country : KW
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 2 - Wait SheIn Link
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 3 - Wait SheIn Logo
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 4 - SheIn Logo Found
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 5 - Open SheIn
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Store Step 1
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Store Step 2 - Waiting New Tab
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Store Step 3 - Waiting Redirect
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Waiting Popup
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Popup Not Found
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 6 - Store Opened
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Change Country KW Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+            <tr>
+
+            <td>4</td>
+
+            <td style="text-align:left;font-weight:500;">
+                Change Country KW
+            </td>
+
+            <td>
+                
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+            </td>
+
+            <td>
+                <span style="color:#999;">—</span>
+            </td>
+
+            <td>
+                <button
+                    onclick="toggleDetails('details_4')"
+                    style="
+                        background:#005bea;
+                        color:white;
+                        border:none;
+                        padding:8px 14px;
+                        border-radius:8px;
+                        cursor:pointer;
+                    ">
+                    Show
+                </button>
+            </td>
+
+            </tr>
+            
+        <tr>
+
+        <td>5</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Change Country Egypt
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_5')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_5" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 2 - Change Country
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Popup Found
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Popup Closed
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Selecting Egypt
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Egypt Clicked
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Current Country : Egypt
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Current Country : Egypt
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 3 - Wait Amazon.eg Link
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 4 - Wait Amazon.eg Logo
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 5 - Amazon.eg Logo Found
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 6 - Open Amazon.eg
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Store Step 1
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Store Step 2 - Waiting New Tab
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Store Step 3 - Waiting Redirect
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Waiting Popup
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Popup Not Found
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 7 - Store Opened
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Change Country Egypt Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+            <tr>
+
+            <td>5</td>
+
+            <td style="text-align:left;font-weight:500;">
+                Change Country Egypt
+            </td>
+
+            <td>
+                
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+            </td>
+
+            <td>
+                <span style="color:#999;">—</span>
+            </td>
+
+            <td>
+                <button
+                    onclick="toggleDetails('details_5')"
+                    style="
+                        background:#005bea;
+                        color:white;
+                        border:none;
+                        padding:8px 14px;
+                        border-radius:8px;
+                        cursor:pointer;
+                    ">
+                    Show
+                </button>
+            </td>
+
+            </tr>
+            
+
+                </tbody>
+
+                </table>
+
+                </div>
+
+                <div class="footer">
+
+                    <hr style="margin-bottom:20px;border:none;border-top:1px solid #ddd;">
+
+                    <p>
+                        © 2026 <strong>WaffarX Automation Framework</strong>
+                    </p>
+
+                    <p>
+                        📅 Generated on
+                        <strong>23 Jul 2026 - 04:56:54 AM</strong>
+                    </p>
+
+                    <p style="margin-top:10px;font-size:15px;color:#444;">
+                        👨‍💻 Tester :
+                        <strong style="color:#005bea;">
+                            Nohair Gamal
+                        </strong>
+                    </p>
+
+                </div>
+
+        </div>
+        <script>
+
+        function toggleDetails(id){
+
+            const row = document.getElementById(id);
+
+            if(row.style.display === "table-row"){
+
+                row.style.display = "none";
+
+            }else{
+
+                row.style.display = "table-row";
+
+            }
+
+        }
+
+        </script>
+
+        </body>
+
+        </html>
+        
