@@ -1,0 +1,2915 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>WaffarAd Automation Report</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#eef3f8;
+    color:#222;
+    padding:40px;
+}
+
+.container{
+    max-width:1500px;
+    margin:auto;
+}
+
+.header{
+    background:linear-gradient(135deg,#005bea,#00c6fb);
+    color:white;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 12px 35px rgba(0,0,0,.20);
+}
+
+.header h1{
+    font-size:38px;
+}
+
+.header p{
+    margin-top:10px;
+    font-size:17px;
+    opacity:.95;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-top:30px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    padding:22px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+.card span{
+    color:#777;
+    font-size:14px;
+}
+
+.card h2{
+    margin-top:12px;
+    font-size:30px;
+}
+
+.blue{border-left:6px solid #007bff;}
+.green{border-left:6px solid #28a745;}
+.red{border-left:6px solid #dc3545;}
+.orange{border-left:6px solid #ff9800;}
+.purple{border-left:6px solid #7b1fa2;}
+.cyan{border-left:6px solid #00bcd4;}
+
+.progress-container{
+    margin-top:35px;
+}
+
+.progress-title{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:10px;
+    font-weight:600;
+}
+
+.progress{
+    height:25px;
+    background:#ddd;
+    border-radius:30px;
+    overflow:hidden;
+}
+
+.progress-bar{
+    height:100%;
+    width:100.0%;
+    background:linear-gradient(90deg,#00c853,#64dd17);
+    border-radius:30px;
+}
+
+.table-box{
+    margin-top:40px;
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+thead{
+    background:#005bea;
+    color:white;
+}
+
+th{
+    padding:18px;
+    font-size:16px;
+}
+
+td{
+    padding:18px;
+    border-bottom:1px solid #eee;
+    text-align:center;
+}
+
+tbody tr:hover{
+    background:#f5f9ff;
+}
+
+.pass{
+    color:#28a745;
+    font-weight:bold;
+}
+
+.fail{
+    color:#dc3545;
+    font-weight:bold;
+}
+
+.badge-pass{
+    background:#d4edda;
+    color:#28a745;
+    padding:8px 18px;
+    border-radius:25px;
+    font-weight:600;
+}
+
+.badge-fail{
+    background:#f8d7da;
+    color:#dc3545;
+    padding:8px 18px;
+    border-radius:25px;
+    font-weight:600;
+}
+
+a{
+    text-decoration:none;
+    background:#007bff;
+    color:white;
+    padding:8px 15px;
+    border-radius:8px;
+    transition:.3s;
+}
+
+a:hover{
+    background:#0056b3;
+}
+
+.footer{
+    margin-top:40px;
+    text-align:center;
+    color:#666;
+    font-size:14px;
+}
+
+.details-btn{
+    background:#005bea;
+    color:white;
+    border:none;
+    padding:8px 14px;
+    border-radius:8px;
+    cursor:pointer;
+    font-family:'Poppins',sans-serif;
+}
+
+.details-btn:hover{
+    background:#0045b5;
+}
+
+.details-row{
+    display:none;
+    background:#f7f9fc;
+}
+
+.details-content{
+    text-align:left;
+    padding:20px;
+    font-size:14px;
+    line-height:1.8;
+    white-space:pre-wrap;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+
+        <div class="header">
+
+            <h1>🚀 WaffarAd Automation Report</h1>
+
+            <p>
+                Generated Automatically after Automation Execution
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card blue">
+
+                <span>Execution Time</span>
+
+                <p>2026-07-26 03:31:38</p>
+
+            </div>
+
+
+            <div class="card cyan">
+
+                <span>Execution Duration</span>
+
+                <h2>53.79s</h2>
+
+            </div>
+
+
+            <div class="card green">
+
+                <span>Passed</span>
+
+                <h2>29</h2>
+
+            </div>
+
+
+            <div class="card red">
+
+                <span>Failed</span>
+
+                <h2>0</h2>
+
+            </div>
+
+
+            <div class="card orange">
+
+                <span>Total Tests</span>
+
+                <h2>29</h2>
+
+            </div>
+
+
+            <div class="card purple">
+
+                <span>Pass Rate</span>
+
+                <h2>100.0%</h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="progress-container">
+
+            <div class="progress-title">
+
+                <span>Automation Success Rate</span>
+
+                <span>100.0%</span>
+
+            </div>
+
+            <div class="progress">
+
+                <div class="progress-bar"></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="table-box">
+
+        <table>
+
+        <thead>
+
+        <tr>
+
+        <th>#</th>
+
+        <th>Test Case</th>
+
+        <th>Status</th>
+
+        <th>Screenshot</th>
+        <th>Details</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        
+        <tr>
+
+        <td>1</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Signup Page Open
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_1')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_1" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Signup Page Open Test
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Signup Page Open Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        <tr>
+
+        <td>2</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Empty Signup Username
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_2')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_2" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Empty Username Test
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Empty Username Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        <tr>
+
+        <td>3</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Short Signup Username
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_3')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_3" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Short Username Test
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Short Username Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        <tr>
+
+        <td>4</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Signup Username Contains Symbols
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_4')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_4" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Username Contains Symbols Test
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Username Contains Symbols Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        <tr>
+
+        <td>5</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Empty Signup Email
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_5')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_5" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Empty Email Test
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Empty Email Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        <tr>
+
+        <td>6</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Invalid Signup Email Format
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_6')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_6" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Invalid Email Format Test
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Invalid Email Format Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        <tr>
+
+        <td>7</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Empty Signup Brand Name
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_7')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_7" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Empty Brand Name Test
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Empty Brand Name Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        <tr>
+
+        <td>8</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Signup Brand Name Contains Symbols
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_8')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_8" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Brand Name Contains Symbols Test
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Brand Name Contains Symbols Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        <tr>
+
+        <td>9</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Short Signup Brand Name
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_9')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_9" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Short Brand Name Test
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Short Brand Name Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        <tr>
+
+        <td>10</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Long Signup Brand Name
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_10')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_10" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Long Brand Name Test
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Long Brand Name Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        <tr>
+
+        <td>11</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Empty Signup Merchant URL
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_11')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_11" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Empty Merchant URL Test
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Empty Merchant URL Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        <tr>
+
+        <td>12</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Invalid Signup Merchant URL
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_12')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_12" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Invalid Merchant URL Test
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Invalid Merchant URL Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        <tr>
+
+        <td>13</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Empty Signup Description
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_13')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_13" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Empty Description Test
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Empty Description Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        <tr>
+
+        <td>14</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Long Signup Description
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_14')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_14" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Long Description Test
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Long Description Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        <tr>
+
+        <td>15</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Empty Signup Phone
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_15')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_15" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Empty Phone Test
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Empty Phone Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        <tr>
+
+        <td>16</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Short Signup Phone
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_16')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_16" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Short Phone Test
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Short Phone Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        <tr>
+
+        <td>17</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Long Signup Phone
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_17')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_17" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Long Phone Test
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Long Phone Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        <tr>
+
+        <td>18</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Empty Signup Password
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_18')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_18" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Empty Password Test
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Empty Password Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        <tr>
+
+        <td>19</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Empty Signup Confirm Password
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_19')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_19" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Empty Confirm Password Test
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Empty Confirm Password Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        <tr>
+
+        <td>20</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Signup Password Without Uppercase
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_20')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_20" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Password Without Uppercase Test
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Password Without Uppercase Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        <tr>
+
+        <td>21</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Signup Password Without Number
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_21')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_21" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Password Without Number Test
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Password Without Number Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        <tr>
+
+        <td>22</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Signup Password Without Special Character
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_22')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_22" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Password Without Special Character Test
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Password Without Special Character Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        <tr>
+
+        <td>23</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Short Signup Password
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_23')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_23" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Short Password Test
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Short Password Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        <tr>
+
+        <td>24</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Long Signup Password
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_24')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_24" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Long Password Test
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Long Password Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        <tr>
+
+        <td>25</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Signup Password Not Match
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_25')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_25" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Password Not Match Test
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Password Not Match Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        <tr>
+
+        <td>26</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Signup Password Eye
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_26')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_26" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Password Eye Test
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Password Eye Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        <tr>
+
+        <td>27</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Signup Confirm Password Eye
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_27')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_27" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Confirm Password Eye Test
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Confirm Password Eye Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        <tr>
+
+        <td>28</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Signup Existing Email
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_28')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_28" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Existing Email Test
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Existing Email Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        <tr>
+
+        <td>29</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Valid Signup
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_29')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_29" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Valid Signup Test
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Valid Signup Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+
+                </tbody>
+
+                </table>
+
+                </div>
+
+                <div class="footer">
+
+                    <hr style="margin-bottom:20px;border:none;border-top:1px solid #ddd;">
+
+                    <p>
+                        © 2026 <strong>WaffarAd Automation Framework</strong>
+                    </p>
+
+                    <p>
+                        📅 Generated on
+                        <strong>26 Jul 2026 - 03:31:38 AM</strong>
+                    </p>
+
+                    <p style="margin-top:10px;font-size:15px;color:#444;">
+                        👨‍💻 Tester :
+                        <strong style="color:#005bea;">
+                            Nohair Gamal
+                        </strong>
+                    </p>
+
+                </div>
+
+        </div>
+        <script>
+
+        function toggleDetails(id){
+
+            const row = document.getElementById(id);
+
+            if(row.style.display === "table-row"){
+
+                row.style.display = "none";
+
+            }else{
+
+                row.style.display = "table-row";
+
+            }
+
+        }
+
+        </script>
+
+        </body>
+
+        </html>
+        
