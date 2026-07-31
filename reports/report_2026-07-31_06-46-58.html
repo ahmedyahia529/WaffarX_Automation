@@ -1,0 +1,3499 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>WaffarAd Automation Report</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#eef3f8;
+    color:#222;
+    padding:40px;
+}
+
+.container{
+    max-width:1500px;
+    margin:auto;
+}
+
+.header{
+    background:linear-gradient(135deg,#005bea,#00c6fb);
+    color:white;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 12px 35px rgba(0,0,0,.20);
+}
+
+.header h1{
+    font-size:38px;
+}
+
+.header p{
+    margin-top:10px;
+    font-size:17px;
+    opacity:.95;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-top:30px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    padding:22px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+.card span{
+    color:#777;
+    font-size:14px;
+}
+
+.card h2{
+    margin-top:12px;
+    font-size:30px;
+}
+
+.blue{border-left:6px solid #007bff;}
+.green{border-left:6px solid #28a745;}
+.red{border-left:6px solid #dc3545;}
+.orange{border-left:6px solid #ff9800;}
+.purple{border-left:6px solid #7b1fa2;}
+.cyan{border-left:6px solid #00bcd4;}
+
+.progress-container{
+    margin-top:35px;
+}
+
+.progress-title{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:10px;
+    font-weight:600;
+}
+
+.progress{
+    height:25px;
+    background:#ddd;
+    border-radius:30px;
+    overflow:hidden;
+}
+
+.progress-bar{
+    height:100%;
+    width:100.0%;
+    background:linear-gradient(90deg,#00c853,#64dd17);
+    border-radius:30px;
+}
+
+.table-box{
+    margin-top:40px;
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+thead{
+    background:#005bea;
+    color:white;
+}
+
+th{
+    padding:18px;
+    font-size:16px;
+}
+
+td{
+    padding:18px;
+    border-bottom:1px solid #eee;
+    text-align:center;
+}
+
+tbody tr:hover{
+    background:#f5f9ff;
+}
+
+.pass{
+    color:#28a745;
+    font-weight:bold;
+}
+
+.fail{
+    color:#dc3545;
+    font-weight:bold;
+}
+
+.badge-pass{
+    background:#d4edda;
+    color:#28a745;
+    padding:8px 18px;
+    border-radius:25px;
+    font-weight:600;
+}
+
+.badge-fail{
+    background:#f8d7da;
+    color:#dc3545;
+    padding:8px 18px;
+    border-radius:25px;
+    font-weight:600;
+}
+
+a{
+    text-decoration:none;
+    background:#007bff;
+    color:white;
+    padding:8px 15px;
+    border-radius:8px;
+    transition:.3s;
+}
+
+a:hover{
+    background:#0056b3;
+}
+
+.footer{
+    margin-top:40px;
+    text-align:center;
+    color:#666;
+    font-size:14px;
+}
+
+.details-btn{
+    background:#005bea;
+    color:white;
+    border:none;
+    padding:8px 14px;
+    border-radius:8px;
+    cursor:pointer;
+    font-family:'Poppins',sans-serif;
+}
+
+.details-btn:hover{
+    background:#0045b5;
+}
+
+.details-row{
+    display:none;
+    background:#f7f9fc;
+}
+
+.details-content{
+    text-align:left;
+    padding:20px;
+    font-size:14px;
+    line-height:1.8;
+    white-space:pre-wrap;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+
+        <div class="header">
+
+            <h1>🚀 WaffarAd Automation Report</h1>
+
+            <p>
+                Generated Automatically after Automation Execution
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card blue">
+
+                <span>Execution Time</span>
+
+                <p>2026-07-31 06:46:58</p>
+
+            </div>
+
+
+            <div class="card cyan">
+
+                <span>Execution Duration</span>
+
+                <h2>86.30s</h2>
+
+            </div>
+
+
+            <div class="card green">
+
+                <span>Passed</span>
+
+                <h2>10</h2>
+
+            </div>
+
+
+            <div class="card red">
+
+                <span>Failed</span>
+
+                <h2>0</h2>
+
+            </div>
+
+
+            <div class="card orange">
+
+                <span>Total Tests</span>
+
+                <h2>10</h2>
+
+            </div>
+
+
+            <div class="card purple">
+
+                <span>Pass Rate</span>
+
+                <h2>100.0%</h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="progress-container">
+
+            <div class="progress-title">
+
+                <span>Automation Success Rate</span>
+
+                <span>100.0%</span>
+
+            </div>
+
+            <div class="progress">
+
+                <div class="progress-bar"></div>
+
+            </div>
+
+        </div>
+        
+        <div style="
+        display:flex;
+        align-items:center;
+        gap:15px;
+        margin-top:35px;
+        margin-bottom:15px;
+        flex-wrap:wrap;
+        ">
+
+        <input
+        id="searchBox"
+        type="text"
+        placeholder="🔍 Search Test..."
+        style="
+        padding:10px 15px;
+        border:1px solid #ddd;
+        border-radius:8px;
+        width:260px;
+        font-family:Poppins;
+        font-size:14px;
+        ">
+
+        <select
+        id="searchMode"
+        style="
+        padding:10px;
+        border:1px solid #ddd;
+        border-radius:8px;
+        font-family:Poppins;
+        ">
+
+        <option value="name">
+        Search Test
+        </option>
+
+        <option value="logs">
+        Search Logs
+        </option>
+
+        <option value="both">
+        Search Both
+        </option>
+
+        </select>
+
+        <select
+        id="statusFilter"
+        style="
+        padding:10px;
+        border:1px solid #ddd;
+        border-radius:8px;
+        font-family:Poppins;
+        ">
+
+        <option value="All">All Status</option>
+        <option value="PASS">PASS</option>
+        <option value="FAIL">FAIL</option>
+
+        </select>
+
+        <select
+        id="sectionFilter"
+        style="
+        padding:10px;
+        border:1px solid #ddd;
+        border-radius:8px;
+        font-family:Poppins;
+        ">
+
+        <option value="All">All Sections</option>
+
+        </select>
+
+        <div
+        id="filterCounter"
+        style="
+        margin-left:auto;
+        font-weight:600;
+        color:#666;
+        ">
+        Showing 0 Tests
+        </div>
+
+        </div>
+        
+
+        <div class="table-box">
+
+        <div style="
+        padding:20px;
+        font-size:22px;
+        font-weight:700;
+        color:#005bea;
+        border-bottom:1px solid #eee;
+        ">
+
+        📊 Section Summary
+
+        </div>
+
+        <table>
+
+        <thead>
+
+        <tr>
+
+        <th>Section</th>
+
+        <th>Passed</th>
+
+        <th>Failed</th>
+
+        <th>Total</th>
+
+        <th>Pass Rate</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        
+
+        <tr>
+
+        <td style="text-align:left;font-weight:600;">
+        📦 Merchant Orders
+        </td>
+
+        <td style="color:#28a745;font-weight:bold;">
+        10
+        </td>
+
+        <td style="color:#dc3545;font-weight:bold;">
+        0
+        </td>
+
+        <td>
+        10
+        </td>
+
+        <td>
+
+        <span style="
+        background:#28a745;
+        color:white;
+        padding:6px 14px;
+        border-radius:20px;
+        font-weight:600;
+        ">
+
+        100.0%
+
+        </span>
+
+        </td>
+
+        </tr>
+
+        
+
+        </tbody>
+
+        </table>
+
+        </div>
+
+        
+
+        
+        <div class="table-box">
+
+        <table>
+
+        <thead>
+
+        <tr>
+
+        <th>#</th>
+
+        <th>Test Case</th>
+
+        <th>Status</th>
+
+        <th>Screenshot</th>
+        <th>Details</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        
+
+                <tr style="
+                    background:#f4f8ff;
+                    
+                ">
+
+                    <td colspan="5"
+                    style="
+                        padding:18px;
+                        text-align:center;
+                        font-size:20px;
+                        font-weight:700;
+                        color:#005bea;
+                        border-top:3px solid #005bea;
+                        border-bottom:3px solid #d8e8ff;
+                    ">
+
+                        📦 Merchant Orders
+
+                    </td>
+
+                </tr>
+
+                
+        
+        <tr
+        class="test-row"
+        data-name="Open Orders Page"
+        data-status="PASS"
+        data-section="📦 Merchant Orders"
+        data-override="No"
+        data-logs="[INFO] Running Open Orders Page Test [STEP] Opening Login page [STEP] Opening Login page [STEP] Login page loaded successfully [STEP] Logging in as Merchant [STEP] Logging in as nahla [STEP] Waiting for Dashboard to appear after login [STEP] Dashboard appeared successfully [STEP] Opening Orders page [STEP] Opening Orders page [STEP] Waiting Orders page [PASS] Orders page opened successfully"
+        >
+
+        <td>1</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Open Orders Page
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_1')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_1" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Open Orders Page Test
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Login page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Login page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Login page loaded successfully
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Logging in as Merchant
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Logging in as nahla
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Waiting for Dashboard to appear after login
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Dashboard appeared successfully
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Orders page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Orders page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Waiting Orders page
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Orders page opened successfully
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        
+        <tr
+        class="test-row"
+        data-name="Search Order Filter"
+        data-status="PASS"
+        data-section="📦 Merchant Orders"
+        data-override="No"
+        data-logs="[INFO] Running Search Order Filter Test [STEP] Opening Orders page [STEP] Opening Orders page [STEP] Waiting Orders page [STEP] Opening Columns [STEP] Opening Columns list [STEP] Enable ORDER NAME column [STEP] Enabling ORDER NAME [STEP] ORDER NAME enabled [STEP] Enabling ORDER NUMBER [STEP] ORDER NUMBER enabled [STEP] Closing Columns [STEP] Searching for 303 [STEP] Search value entered : 303 [STEP] Applying Filters [STEP] Clicking Apply button [STEP] Waiting table refresh [STEP] Orders table refreshed [STEP] Reading Orders table [STEP] 3 Orders found [STEP] Validating search results [PASS] Search Order Filter Passed"
+        >
+
+        <td>2</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Search Order Filter
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_2')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_2" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Search Order Filter Test
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Orders page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Orders page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Waiting Orders page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Columns
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Columns list
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Enable ORDER NAME column
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Enabling ORDER NAME
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] ORDER NAME enabled
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Enabling ORDER NUMBER
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] ORDER NUMBER enabled
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Closing Columns
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Searching for 303
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Search value entered : 303
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Applying Filters
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Apply button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Waiting table refresh
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Orders table refreshed
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Reading Orders table
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] 3 Orders found
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Validating search results
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Search Order Filter Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        
+        <tr
+        class="test-row"
+        data-name="Date Range Filter"
+        data-status="PASS"
+        data-section="📦 Merchant Orders"
+        data-override="No"
+        data-logs="[INFO] Running Date Range Filter Test [STEP] Opening Orders page [STEP] Opening Orders page [STEP] Waiting Orders page [STEP] Reset Filters [STEP] Clicking Reset button [STEP] Clicking Apply button [STEP] Orders table refreshed [STEP] Applying Date Filter [STEP] Date From : 2026-06-10 [STEP] Date To : 2026-06-15 [STEP] Clicking Apply button [STEP] Orders table refreshed [STEP] 9 Orders found [PASS] Date Range Filter Passed"
+        >
+
+        <td>3</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Date Range Filter
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_3')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_3" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Date Range Filter Test
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Orders page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Orders page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Waiting Orders page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Reset Filters
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Reset button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Apply button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Orders table refreshed
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Applying Date Filter
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Date From : 2026-06-10
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Date To : 2026-06-15
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Apply button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Orders table refreshed
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] 9 Orders found
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Date Range Filter Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        
+        <tr
+        class="test-row"
+        data-name="Not Locked Order Type Filter"
+        data-status="PASS"
+        data-section="📦 Merchant Orders"
+        data-override="No"
+        data-logs="[INFO] Running Not Locked Order Type Filter Test [STEP] Opening Orders page [STEP] Opening Orders page [STEP] Waiting Orders page [STEP] Reset Filters [STEP] Clicking Reset button [STEP] Clicking Apply button [STEP] Orders table refreshed [STEP] Selecting Not Locked Order Type [STEP] Selecting Order Type : 2 [STEP] Applying Order Type Filter [STEP] Clicking Apply button [STEP] Orders table refreshed [INFO] Rows = 10 [STEP] 10 Orders found [PASS] Not Locked Order Type Filter Passed"
+        >
+
+        <td>4</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Not Locked Order Type Filter
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_4')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_4" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Not Locked Order Type Filter Test
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Orders page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Orders page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Waiting Orders page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Reset Filters
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Reset button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Apply button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Orders table refreshed
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Selecting Not Locked Order Type
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Selecting Order Type : 2
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Applying Order Type Filter
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Apply button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Orders table refreshed
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Rows = 10
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] 10 Orders found
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Not Locked Order Type Filter Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        
+        <tr
+        class="test-row"
+        data-name="Locked Order Type Filter"
+        data-status="PASS"
+        data-section="📦 Merchant Orders"
+        data-override="No"
+        data-logs="[INFO] Running Locked Order Type Filter Test [STEP] Opening Orders page [STEP] Opening Orders page [STEP] Waiting Orders page [STEP] Reset Filters [STEP] Clicking Reset button [STEP] Clicking Apply button [STEP] Orders table refreshed [STEP] Selecting Locked Order Type [STEP] Selecting Order Type : 1 [STEP] Applying Order Type Filter [STEP] Clicking Apply button [STEP] Orders table refreshed [STEP] 10 Orders found [PASS] Locked Order Type Filter Passed"
+        >
+
+        <td>5</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Locked Order Type Filter
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_5')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_5" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Locked Order Type Filter Test
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Orders page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Orders page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Waiting Orders page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Reset Filters
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Reset button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Apply button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Orders table refreshed
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Selecting Locked Order Type
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Selecting Order Type : 1
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Applying Order Type Filter
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Apply button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Orders table refreshed
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] 10 Orders found
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Locked Order Type Filter Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        
+        <tr
+        class="test-row"
+        data-name="Order Status Filter"
+        data-status="PASS"
+        data-section="📦 Merchant Orders"
+        data-override="No"
+        data-logs="[INFO] Running Order Status Filter Test [STEP] Opening Orders page [STEP] Opening Orders page [STEP] Waiting Orders page [STEP] Testing Status : Pending [STEP] Reset Filters [STEP] Clicking Reset button [STEP] Clicking Apply button [STEP] Orders table refreshed [STEP] Opening Order Status list [STEP] Selecting Status : Pending [STEP] Clicking Apply button [STEP] Orders table refreshed [STEP] 0 Orders found [STEP] No Orders Returned for Pending [STEP] Testing Status : Confirmed [STEP] Reset Filters [STEP] Clicking Reset button [STEP] Clicking Apply button [STEP] Orders table refreshed [STEP] Opening Order Status list [STEP] Selecting Status : Confirmed [STEP] Clicking Apply button [STEP] Orders table refreshed [STEP] 10 Orders found [STEP] Confirmed filter validated successfully [STEP] Testing Status : Rejected [STEP] Reset Filters [STEP] Clicking Reset button [STEP] Clicking Apply button [STEP] Orders table refreshed [STEP] Opening Order Status list [STEP] Selecting Status : Rejected [STEP] Clicking Apply button [STEP] Orders table refreshed [STEP] 10 Orders found [STEP] Rejected filter validated successfully [PASS] Order Status Filter Passed"
+        >
+
+        <td>6</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Order Status Filter
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_6')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_6" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Order Status Filter Test
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Orders page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Orders page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Waiting Orders page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Testing Status : Pending
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Reset Filters
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Reset button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Apply button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Orders table refreshed
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Order Status list
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Selecting Status : Pending
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Apply button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Orders table refreshed
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] 0 Orders found
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] No Orders Returned for Pending
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Testing Status : Confirmed
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Reset Filters
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Reset button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Apply button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Orders table refreshed
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Order Status list
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Selecting Status : Confirmed
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Apply button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Orders table refreshed
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] 10 Orders found
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Confirmed filter validated successfully
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Testing Status : Rejected
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Reset Filters
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Reset button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Apply button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Orders table refreshed
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Order Status list
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Selecting Status : Rejected
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Apply button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Orders table refreshed
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] 10 Orders found
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Rejected filter validated successfully
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Order Status Filter Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        
+        <tr
+        class="test-row"
+        data-name="Payment Status Filter"
+        data-status="PASS"
+        data-section="📦 Merchant Orders"
+        data-override="No"
+        data-logs="[INFO] Running Payment Status Filter Test [STEP] Opening Orders page [STEP] Opening Orders page [STEP] Waiting Orders page [STEP] Testing Payment Status : NotPaid [STEP] Reset Filters [STEP] Clicking Reset button [STEP] Clicking Apply button [STEP] Orders table refreshed [STEP] Opening Payment Status list [STEP] Selecting Payment Status : NotPaid [STEP] Clicking Apply button [STEP] Orders table refreshed [STEP] 10 Orders found [STEP] NotPaid filter validated successfully [STEP] Testing Payment Status : PartiallyPaid [STEP] Reset Filters [STEP] Clicking Reset button [STEP] Clicking Apply button [STEP] Orders table refreshed [STEP] Opening Payment Status list [STEP] Selecting Payment Status : PartiallyPaid [STEP] Clicking Apply button [STEP] Orders table refreshed [STEP] 0 Orders found [STEP] No Orders Returned for PartiallyPaid [STEP] Testing Payment Status : FullyPaid [STEP] Reset Filters [STEP] Clicking Reset button [STEP] Clicking Apply button [STEP] Orders table refreshed [STEP] Opening Payment Status list [STEP] Selecting Payment Status : FullyPaid [STEP] Clicking Apply button [STEP] Orders table refreshed [STEP] 0 Orders found [STEP] No Orders Returned for FullyPaid [STEP] Reset Filters [STEP] Clicking Reset button [STEP] Clicking Apply button [STEP] Orders table refreshed [PASS] Payment Status Filter Passed"
+        >
+
+        <td>7</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Payment Status Filter
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_7')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_7" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Payment Status Filter Test
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Orders page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Orders page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Waiting Orders page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Testing Payment Status : NotPaid
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Reset Filters
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Reset button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Apply button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Orders table refreshed
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Payment Status list
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Selecting Payment Status : NotPaid
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Apply button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Orders table refreshed
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] 10 Orders found
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] NotPaid filter validated successfully
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Testing Payment Status : PartiallyPaid
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Reset Filters
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Reset button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Apply button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Orders table refreshed
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Payment Status list
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Selecting Payment Status : PartiallyPaid
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Apply button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Orders table refreshed
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] 0 Orders found
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] No Orders Returned for PartiallyPaid
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Testing Payment Status : FullyPaid
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Reset Filters
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Reset button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Apply button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Orders table refreshed
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Payment Status list
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Selecting Payment Status : FullyPaid
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Apply button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Orders table refreshed
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] 0 Orders found
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] No Orders Returned for FullyPaid
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Reset Filters
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Reset button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Apply button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Orders table refreshed
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Payment Status Filter Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        
+        <tr
+        class="test-row"
+        data-name="Rows Per Page"
+        data-status="PASS"
+        data-section="📦 Merchant Orders"
+        data-override="No"
+        data-logs="[INFO] Running Rows Per Page Test [STEP] Opening Orders page [STEP] Opening Orders page [STEP] Waiting Orders page [STEP] Testing Rows Per Page : 5 [STEP] Selecting Rows Per Page : 5 [STEP] Orders table refreshed [STEP] 5 Orders found [STEP] 5 rows displayed [STEP] Testing Rows Per Page : 10 [STEP] Selecting Rows Per Page : 10 [STEP] Orders table refreshed [STEP] 10 Orders found [STEP] 10 rows displayed [STEP] Testing Rows Per Page : 50 [STEP] Selecting Rows Per Page : 50 [STEP] Orders table refreshed [STEP] 50 Orders found [STEP] 50 rows displayed [PASS] Rows Per Page Test Passed"
+        >
+
+        <td>8</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Rows Per Page
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_8')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_8" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Rows Per Page Test
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Orders page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Orders page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Waiting Orders page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Testing Rows Per Page : 5
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Selecting Rows Per Page : 5
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Orders table refreshed
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] 5 Orders found
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] 5 rows displayed
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Testing Rows Per Page : 10
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Selecting Rows Per Page : 10
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Orders table refreshed
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] 10 Orders found
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] 10 rows displayed
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Testing Rows Per Page : 50
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Selecting Rows Per Page : 50
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Orders table refreshed
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] 50 Orders found
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] 50 rows displayed
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Rows Per Page Test Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        
+        <tr
+        class="test-row"
+        data-name="Pagination Navigation"
+        data-status="PASS"
+        data-section="📦 Merchant Orders"
+        data-override="No"
+        data-logs="[INFO] Running Pagination Navigation Test [STEP] Opening Orders page [STEP] Opening Orders page [STEP] Waiting Orders page [STEP] 50 Orders found [STEP] Navigating using Next button [STEP] Opening Next Page [STEP] Orders table refreshed [STEP] 50 Orders found [STEP] Opening Next Page [STEP] Orders table refreshed [STEP] 50 Orders found [STEP] Opening Next Page [STEP] Orders table refreshed [STEP] 50 Orders found [STEP] Opening Next Page [STEP] Orders table refreshed [STEP] 32 Orders found [STEP] Reached Last Page [STEP] Navigating using Previous button [STEP] 32 Orders found [STEP] Opening Previous Page [STEP] Orders table refreshed [STEP] 50 Orders found [STEP] Opening Previous Page [STEP] Orders table refreshed [STEP] 50 Orders found [STEP] Opening Previous Page [STEP] Orders table refreshed [STEP] 50 Orders found [STEP] Opening Previous Page [STEP] Orders table refreshed [STEP] 50 Orders found [PASS] Pagination Navigation Passed"
+        >
+
+        <td>9</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Pagination Navigation
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_9')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_9" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Pagination Navigation Test
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Orders page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Orders page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Waiting Orders page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] 50 Orders found
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Navigating using Next button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Next Page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Orders table refreshed
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] 50 Orders found
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Next Page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Orders table refreshed
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] 50 Orders found
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Next Page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Orders table refreshed
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] 50 Orders found
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Next Page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Orders table refreshed
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] 32 Orders found
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Reached Last Page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Navigating using Previous button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] 32 Orders found
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Previous Page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Orders table refreshed
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] 50 Orders found
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Previous Page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Orders table refreshed
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] 50 Orders found
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Previous Page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Orders table refreshed
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] 50 Orders found
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Previous Page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Orders table refreshed
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] 50 Orders found
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Pagination Navigation Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        
+        <tr
+        class="test-row"
+        data-name="Locked Order Has No Approve Button"
+        data-status="PASS"
+        data-section="📦 Merchant Orders"
+        data-override="No"
+        data-logs="[INFO] Running Locked Order Validation Test [STEP] Opening Orders page [STEP] Opening Orders page [STEP] Waiting Orders page [STEP] 50 Orders found [PASS] Locked Orders Validation Passed"
+        >
+
+        <td>10</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Locked Order Has No Approve Button
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_10')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_10" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="margin-bottom:15px;">
+        Execution Details
+        </h3>
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Locked Order Validation Test
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Orders page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Orders page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Waiting Orders page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] 50 Orders found
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Locked Orders Validation Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+
+                </tbody>
+
+                </table>
+
+                </div>
+
+                <div class="footer">
+
+                    <hr style="margin-bottom:20px;border:none;border-top:1px solid #ddd;">
+
+                    <p>
+                        © 2026 <strong>WaffarAd Automation Framework</strong>
+                    </p>
+
+                    <p>
+                        📅 Generated on
+                        <strong>31 Jul 2026 - 06:46:58 AM</strong>
+                    </p>
+
+                    <p style="margin-top:10px;font-size:15px;color:#444;">
+                        👨‍💻 Tester :
+                        <strong style="color:#005bea;">
+                            Nohair Gamal
+                        </strong>
+                    </p>
+
+                </div>
+
+        </div>
+        <script>
+
+        function toggleDetails(id){
+
+            const row = document.getElementById(id);
+
+            if(row.style.display === "table-row"){
+
+                row.style.display = "none";
+
+            }else{
+
+                row.style.display = "table-row";
+
+            }
+
+        }
+
+
+
+
+
+        
+        const searchBox = document.getElementById("searchBox");
+        const statusFilter = document.getElementById("statusFilter");
+        const sectionFilter = document.getElementById("sectionFilter");
+        const searchMode =
+        document.getElementById("searchMode");
+        const counter = document.getElementById("filterCounter");
+
+        const rows = document.querySelectorAll(".test-row");
+
+        const sections = new Set();
+
+        rows.forEach(row => {
+
+            const section = row.dataset.section || "";
+
+            if (section) {
+
+                sections.add(section);
+
+            }
+
+        });
+
+        sections.forEach(section => {
+
+            const option = document.createElement("option");
+
+            option.value = section;
+
+            option.textContent = section;
+
+            sectionFilter.appendChild(option);
+
+        });
+
+        function filterTests(){
+
+            const text = searchBox.value.toLowerCase();
+
+            const status = statusFilter.value;
+
+            const section = sectionFilter.value;
+            const mode =
+            searchMode.value;
+
+            let visible = 0;
+
+            rows.forEach(row => {
+
+                let matchName = false;
+
+                if(mode === "name"){
+
+                    matchName =
+                        row.dataset.name
+                        .toLowerCase()
+                        .includes(text);
+
+                }
+
+                else if(mode === "logs"){
+
+                    matchName =
+                        row.dataset.logs
+                        .toLowerCase()
+                        .includes(text);
+
+                }
+
+                else{
+
+                    matchName =
+
+                        row.dataset.name
+                        .toLowerCase()
+                        .includes(text)
+
+                        ||
+
+                        row.dataset.logs
+                        .toLowerCase()
+                        .includes(text);
+
+                }
+
+                const matchStatus =
+                    status === "All" ||
+                    row.dataset.status === status;
+
+                const matchSection =
+                    section === "All" ||
+                    row.dataset.section === section;
+
+                if(matchName && matchStatus && matchSection){
+
+                    row.style.display = "";
+
+                    visible++;
+
+                }
+
+                else{
+
+                    row.style.display = "none";
+
+                }
+
+            });
+
+            counter.textContent =
+                `Showing ${visible} Tests`;
+
+        }
+
+        searchBox.addEventListener(
+            "keyup",
+            filterTests
+        );
+        searchMode.addEventListener(
+            "change",
+            filterTests
+        );
+        searchMode.addEventListener("change",()=>{
+
+            if(searchMode.value==="name"){
+
+                searchBox.placeholder =
+                "🔍 Search Test Name...";
+
+            }
+
+            else if(searchMode.value==="logs"){
+
+                searchBox.placeholder =
+                "🔍 Search Logs...";
+
+            }
+
+            else{
+
+                searchBox.placeholder =
+                "🔍 Search Tests & Logs...";
+
+            }
+
+        });
+
+        statusFilter.addEventListener(
+            "change",
+            filterTests
+        );
+
+        sectionFilter.addEventListener(
+            "change",
+            filterTests
+        );
+
+        filterTests();
+        </script>
+
+        </body>
+
+        </html>
+        
