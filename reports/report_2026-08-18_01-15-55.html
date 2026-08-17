@@ -1,0 +1,6477 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>WaffarX Automation Report</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#eef3f8;
+    color:#222;
+    padding:40px;
+}
+
+.container{
+    max-width:1500px;
+    margin:auto;
+}
+
+.header{
+    background:linear-gradient(135deg,#005bea,#00c6fb);
+    color:white;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 12px 35px rgba(0,0,0,.20);
+}
+
+.header h1{
+    font-size:38px;
+}
+
+.header p{
+    margin-top:10px;
+    font-size:17px;
+    opacity:.95;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-top:30px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    padding:22px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+.card span{
+    color:#777;
+    font-size:14px;
+}
+
+.card h2{
+    margin-top:12px;
+    font-size:30px;
+}
+
+.blue{border-left:6px solid #007bff;}
+.green{border-left:6px solid #28a745;}
+.red{border-left:6px solid #dc3545;}
+.orange{border-left:6px solid #ff9800;}
+.purple{border-left:6px solid #7b1fa2;}
+.cyan{border-left:6px solid #00bcd4;}
+
+.progress-container{
+    margin-top:35px;
+}
+
+.progress-title{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:10px;
+    font-weight:600;
+}
+
+.progress{
+    height:25px;
+    background:#ddd;
+    border-radius:30px;
+    overflow:hidden;
+}
+
+.progress-bar{
+    height:100%;
+    width:100.0%;
+    background:linear-gradient(90deg,#00c853,#64dd17);
+    border-radius:30px;
+}
+
+.table-box{
+    margin-top:40px;
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+thead{
+    background:#005bea;
+    color:white;
+}
+
+th{
+    padding:18px;
+    font-size:16px;
+}
+
+td{
+    padding:18px;
+    border-bottom:1px solid #eee;
+    text-align:center;
+}
+
+tbody tr:hover{
+    background:#f5f9ff;
+}
+
+.pass{
+    color:#28a745;
+    font-weight:bold;
+}
+
+.fail{
+    color:#dc3545;
+    font-weight:bold;
+}
+
+.badge-pass{
+    background:#d4edda;
+    color:#28a745;
+    padding:8px 18px;
+    border-radius:25px;
+    font-weight:600;
+}
+
+.badge-fail{
+    background:#f8d7da;
+    color:#dc3545;
+    padding:8px 18px;
+    border-radius:25px;
+    font-weight:600;
+}
+
+a{
+    text-decoration:none;
+    background:#007bff;
+    color:white;
+    padding:8px 15px;
+    border-radius:8px;
+    transition:.3s;
+}
+
+a:hover{
+    background:#0056b3;
+}
+
+.footer{
+    margin-top:40px;
+    text-align:center;
+    color:#666;
+    font-size:14px;
+}
+
+.details-btn{
+    background:#005bea;
+    color:white;
+    border:none;
+    padding:8px 14px;
+    border-radius:8px;
+    cursor:pointer;
+    font-family:'Poppins',sans-serif;
+}
+
+.details-btn:hover{
+    background:#0045b5;
+}
+
+.details-row{
+    display:none;
+    background:#f7f9fc;
+}
+
+.details-content{
+    text-align:left;
+    padding:20px;
+    font-size:14px;
+    line-height:1.8;
+    white-space:pre-wrap;
+}
+
+.section-summary-row{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.section-summary-row:hover{
+
+background:#F4F7FB !important;
+
+transform:translateY(-1px);
+
+}
+
+.section-summary-selected{
+
+background:linear-gradient(
+135deg,
+#6366F1,
+#4F46E5
+) !important;
+
+color:white;
+
+box-shadow:0 6px 18px rgba(79,70,229,.25);
+
+}
+
+.section-summary-selected td{
+
+color:white !important;
+
+font-weight:600;
+
+}
+
+.ripple{
+
+position:absolute;
+
+border-radius:50%;
+
+transform:scale(0);
+
+background:rgba(255,255,255,.45);
+
+pointer-events:none;
+
+animation:ripple .6s ease-out;
+
+}
+
+@keyframes ripple{
+
+to{
+
+transform:scale(8);
+
+opacity:0;
+
+}
+
+}
+
+.table-box{
+
+transition:
+opacity .25s ease,
+transform .25s ease;
+
+}
+
+.table-loading{
+
+opacity:.25;
+
+transform:translateY(8px);
+
+pointer-events:none;
+
+}
+
+.test-row{
+
+opacity:1;
+
+transform:translateY(0);
+
+transition:
+opacity .25s ease,
+transform .25s ease;
+
+}
+
+.test-row.animate{
+
+opacity:0;
+
+transform:translateY(12px);
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+
+        <div class="header">
+
+            <h1>🚀 WaffarX Automation Report</h1>
+
+            <p>
+                Generated Automatically after Automation Execution
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card blue">
+
+                <span>Execution Time</span>
+
+                <p>2026-08-18 01:15:55</p>
+
+            </div>
+
+
+            <div class="card cyan">
+
+                <span>Execution Duration</span>
+
+                <h2>262.23s</h2>
+
+            </div>
+
+
+            <div class="card green">
+
+                <span>Passed</span>
+
+                <h2>18</h2>
+
+            </div>
+
+
+            <div class="card red">
+
+                <span>Failed</span>
+
+                <h2>0</h2>
+
+            </div>
+
+
+            <div class="card orange">
+
+                <span>Total Tests</span>
+
+                <h2>18</h2>
+
+            </div>
+
+
+            <div class="card purple">
+
+                <span>Pass Rate</span>
+
+                <h2>100.0%</h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="progress-container">
+
+            <div class="progress-title">
+
+                <span>Automation Success Rate</span>
+
+                <span>100.0%</span>
+
+            </div>
+
+            <div class="progress">
+
+                <div class="progress-bar"></div>
+
+            </div>
+
+        </div>
+        
+        <div style="
+        display:flex;
+        align-items:center;
+        gap:15px;
+        margin-top:35px;
+        margin-bottom:15px;
+        flex-wrap:wrap;
+        ">
+
+        <input
+        id="searchBox"
+        type="text"
+        placeholder="🔍 Search Test..."
+        style="
+        padding:10px 15px;
+        border:1px solid #ddd;
+        border-radius:8px;
+        width:260px;
+        font-family:Poppins;
+        font-size:14px;
+        ">
+
+        <select
+        id="searchMode"
+        style="
+        padding:10px;
+        border:1px solid #ddd;
+        border-radius:8px;
+        font-family:Poppins;
+        ">
+
+        <option value="name">
+        Search Test
+        </option>
+
+        <option value="logs">
+        Search Logs
+        </option>
+
+        <option value="both">
+        Search Both
+        </option>
+
+        </select>
+
+        <select
+        id="statusFilter"
+        style="
+        padding:10px;
+        border:1px solid #ddd;
+        border-radius:8px;
+        font-family:Poppins;
+        ">
+
+        <option value="All">All Status</option>
+        <option value="PASS">PASS</option>
+        <option value="FAIL">FAIL</option>
+
+        </select>
+
+        <select
+        id="sectionFilter"
+        style="
+        padding:10px;
+        border:1px solid #ddd;
+        border-radius:8px;
+        font-family:Poppins;
+        ">
+
+        <option value="All">All Sections</option>
+
+        </select>
+
+        <div
+        id="filterCounter"
+        style="
+        margin-left:auto;
+        font-weight:600;
+        color:#666;
+        ">
+        Showing 0 Tests
+        </div>
+
+        </div>
+        
+
+        <div class="table-box">
+
+        <div style="
+        padding:20px;
+        font-size:22px;
+        font-weight:700;
+        color:#005bea;
+        border-bottom:1px solid #eee;
+        ">
+
+        📊 Section Summary
+
+        </div>
+
+        <table>
+
+        <thead>
+
+        <tr>
+
+        <th>Section</th>
+
+        <th>Passed</th>
+
+        <th>Failed</th>
+
+        <th>Total</th>
+
+        <th>Pass Rate</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        
+
+        <tr
+        class="section-summary-row"
+        data-section="All"
+        style="
+        cursor:pointer;
+        background:#f8fbff;
+        font-weight:bold;
+        ">
+
+        <td>🌍 All Sections</td>
+
+        <td style="color:#28a745;">18</td>
+
+        <td style="color:#dc3545;">0</td>
+
+        <td>18</td>
+
+        <td>
+
+        <span style="
+        background:#005bea;
+        color:white;
+        padding:6px 14px;
+        border-radius:20px;
+        ">
+
+        100.0%
+
+        </span>
+
+        </td>
+
+        </tr>
+
+        
+
+        <tr
+        class="section-summary-row"
+        data-section="📝 Search"
+        style="
+        cursor:pointer;
+        transition:.2s;
+        ">
+
+        <td style="text-align:left;font-weight:600;">
+        📝 Search
+        </td>
+
+        <td style="color:#28a745;font-weight:bold;">
+        18
+        </td>
+
+        <td style="color:#dc3545;font-weight:bold;">
+        0
+        </td>
+
+        <td>
+        18
+        </td>
+
+        <td>
+
+        <span style="
+        background:#28a745;
+        color:white;
+        padding:6px 14px;
+        border-radius:20px;
+        font-weight:600;
+        ">
+
+        100.0%
+
+        </span>
+
+        </td>
+
+        </tr>
+
+        
+        
+        </tbody>
+
+        </table>
+
+        </div>
+
+        
+
+        <div class="table-box">
+
+        <table>
+
+        <thead>
+
+        <tr>
+
+        <th>#</th>
+
+        <th>Test Case</th>
+
+        <th>Status</th>
+
+        <th>Screenshot</th>
+
+        <th>Details</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        
+
+                <tr style="
+                    background:#f4f8ff;
+                    
+                ">
+
+                    <td colspan="5"
+                    style="
+                        padding:18px;
+                        text-align:center;
+                        font-size:20px;
+                        font-weight:700;
+                        color:#005bea;
+                        border-top:3px solid #005bea;
+                        border-bottom:3px solid #d8e8ff;
+                    ">
+
+                        📝 Search
+
+                    </td>
+
+                </tr>
+
+                
+        
+        <tr
+        class="test-row"
+        data-name="Search Valid Store and open store"
+        data-status="PASS"
+        data-section="📝 Search"
+        data-override="No"
+        data-logs="[INFO] Running Search Valid Store [INFO] Login Required [PASS] Login Completed Successfully [INFO] Checking For Home Popup [INFO] Home Popup Detected [PASS] Home Popup Closed Successfully [INFO] Home Page Opened [STEP] Searching : ama [STEP] Clicking Search Button [STEP] Waiting For Search Results [STEP] Search Results Loaded For : ama [STEP] Checking Store : Amazon.eg [STEP] Found Store : Amazon.eg [STEP] Store Found : Amazon.eg [STEP] Selecting Store : Amazon.eg [STEP] Found : Amazon.eg [STEP] Verifying Store Page [STEP] Store Verified [PASS] Search Valid Store Passed"
+        >
+
+        <td>1</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Search Valid Store and open store
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_1')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_1" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="
+        margin-bottom:15px;
+        font-size:20px;
+        ">
+
+        📜 Execution Details
+
+        </h3>
+
+        
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Search Valid Store
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Login Required
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Login Completed Successfully
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Checking For Home Popup
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Home Popup Detected
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Home Popup Closed Successfully
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Home Page Opened
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Searching : ama
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Search Button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Waiting For Search Results
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Search Results Loaded For : ama
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Checking Store : Amazon.eg
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Found Store : Amazon.eg
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Store Found : Amazon.eg
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Selecting Store : Amazon.eg
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Found : Amazon.eg
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Verifying Store Page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Store Verified
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Search Valid Store Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        
+        <tr
+        class="test-row"
+        data-name="Search Store and Products"
+        data-status="PASS"
+        data-section="📝 Search"
+        data-override="No"
+        data-logs="[INFO] Running Search Store And Products [STEP] Searching : ama [STEP] Clicking Search Button [STEP] Waiting For Search Results [STEP] Search Results Loaded For : ama [STEP] Checking Store : Amazon.eg [STEP] Found Store : Amazon.eg [STEP] Store Found : Amazon.eg [STEP] Checking Products For : ama [STEP] Products Found : 20 [STEP] Product : 22mm Milanese Magnetic Loop Stainless Steel Smart Watch Band Compatible with Ama Zfit Bip 5 Silver [STEP] Matching Product Found : 22mm Milanese Magnetic Loop Stainless Steel Smart Watch Band Compatible with Ama Zfit Bip 5 Silver [PASS] Search Store And Products Passed"
+        >
+
+        <td>2</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Search Store and Products
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_2')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_2" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="
+        margin-bottom:15px;
+        font-size:20px;
+        ">
+
+        📜 Execution Details
+
+        </h3>
+
+        
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Search Store And Products
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Searching : ama
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Search Button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Waiting For Search Results
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Search Results Loaded For : ama
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Checking Store : Amazon.eg
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Found Store : Amazon.eg
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Store Found : Amazon.eg
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Checking Products For : ama
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Products Found : 20
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product : 22mm Milanese Magnetic Loop Stainless Steel Smart Watch Band Compatible with Ama Zfit Bip 5 Silver
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Matching Product Found : 22mm Milanese Magnetic Loop Stainless Steel Smart Watch Band Compatible with Ama Zfit Bip 5 Silver
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Search Store And Products Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        
+        <tr
+        class="test-row"
+        data-name="Search Another Store with partial name"
+        data-status="PASS"
+        data-section="📝 Search"
+        data-override="No"
+        data-logs="[INFO] Running Search Another Store With Partial Name [INFO] Step 1 - Open Home [INFO] Already Logged In [INFO] Home Page Opened [INFO] Step 2 - Search Store By Partial Name [STEP] Searching : tech [STEP] Clicking Search Button [STEP] Waiting For Search Results [STEP] Search Results Loaded For : tech [INFO] Step 3 - Verify B.TECH Exists In Stores [STEP] Checking Store : B.TECH [STEP] Found Store : B.TECH [STEP] Store Found : B.TECH [INFO] Step 4 - Select Store [STEP] Selecting Store : B.TECH [STEP] Found : B.TECH [INFO] Step 5 - Verify Store Opened [STEP] Verifying Store Page [STEP] Store Verified [PASS] Search Another Store With Partial Name Passed"
+        >
+
+        <td>3</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Search Another Store with partial name
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_3')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_3" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="
+        margin-bottom:15px;
+        font-size:20px;
+        ">
+
+        📜 Execution Details
+
+        </h3>
+
+        
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Search Another Store With Partial Name
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 1 - Open Home
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Already Logged In
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Home Page Opened
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 2 - Search Store By Partial Name
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Searching : tech
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Search Button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Waiting For Search Results
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Search Results Loaded For : tech
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 3 - Verify B.TECH Exists In Stores
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Checking Store : B.TECH
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Found Store : B.TECH
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Store Found : B.TECH
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 4 - Select Store
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Selecting Store : B.TECH
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Found : B.TECH
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 5 - Verify Store Opened
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Verifying Store Page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Store Verified
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Search Another Store With Partial Name Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        
+        <tr
+        class="test-row"
+        data-name="Search Store with number 2b 2B 2b-Egypt"
+        data-status="PASS"
+        data-section="📝 Search"
+        data-override="No"
+        data-logs="[INFO] Running Search Store With Number [INFO] Step 1 - Open Home [INFO] Already Logged In [INFO] Home Page Opened [STEP] Step 2 - Search Store By Number [STEP] Searching : 2b [STEP] Clicking Search Button [STEP] Waiting For Search Results [STEP] Search Results Loaded For : 2b [INFO] Step 3 - Verify 2B Egypt Exists In Stores [STEP] Checking Store : 2B Egypt [STEP] Found Store : 2B Egypt [STEP] Store Found : 2B Egypt [INFO] Step 4 - Select Store [STEP] Selecting Store : 2B Egypt [STEP] Found : 2B Egypt [INFO] Step 5 - Verify Store Opened [STEP] Verifying Store Page [STEP] Store Verified [PASS] Search Store With Number Passed"
+        >
+
+        <td>4</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Search Store with number 2b 2B 2b-Egypt
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_4')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_4" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="
+        margin-bottom:15px;
+        font-size:20px;
+        ">
+
+        📜 Execution Details
+
+        </h3>
+
+        
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Search Store With Number
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 1 - Open Home
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Already Logged In
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Home Page Opened
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Step 2 - Search Store By Number
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Searching : 2b
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Search Button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Waiting For Search Results
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Search Results Loaded For : 2b
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 3 - Verify 2B Egypt Exists In Stores
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Checking Store : 2B Egypt
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Found Store : 2B Egypt
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Store Found : 2B Egypt
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 4 - Select Store
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Selecting Store : 2B Egypt
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Found : 2B Egypt
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 5 - Verify Store Opened
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Verifying Store Page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Store Verified
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Search Store With Number Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        
+        <tr
+        class="test-row"
+        data-name="Search Store with dot b.tech"
+        data-status="PASS"
+        data-section="📝 Search"
+        data-override="No"
+        data-logs="[INFO] Running Search Store With Dot [INFO] Step 1 - Open Home [INFO] Already Logged In [INFO] Home Page Opened [STEP] Step 2 - Search Store With Dot [STEP] Searching : b.tech [STEP] Clicking Search Button [STEP] Waiting For Search Results [STEP] Search Results Loaded For : b.tech [INFO] Step 3 - Verify B.TECH Exists In Stores [STEP] Checking Store : B.TECH [STEP] Found Store : B.TECH [STEP] Store Found : B.TECH [INFO] Step 4 - Select Store [STEP] Selecting Store : B.TECH [STEP] Found : B.TECH [INFO] Step 5 - Verify Store Opened [STEP] Verifying Store Page [STEP] Store Verified [PASS] Search Store With Dot Passed"
+        >
+
+        <td>5</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Search Store with dot b.tech
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_5')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_5" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="
+        margin-bottom:15px;
+        font-size:20px;
+        ">
+
+        📜 Execution Details
+
+        </h3>
+
+        
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Search Store With Dot
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 1 - Open Home
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Already Logged In
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Home Page Opened
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Step 2 - Search Store With Dot
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Searching : b.tech
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Search Button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Waiting For Search Results
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Search Results Loaded For : b.tech
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 3 - Verify B.TECH Exists In Stores
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Checking Store : B.TECH
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Found Store : B.TECH
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Store Found : B.TECH
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 4 - Select Store
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Selecting Store : B.TECH
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Found : B.TECH
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 5 - Verify Store Opened
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Verifying Store Page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Store Verified
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Search Store With Dot Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        
+        <tr
+        class="test-row"
+        data-name="Search Store with leading spaces"
+        data-status="PASS"
+        data-section="📝 Search"
+        data-override="No"
+        data-logs="[INFO] Running Search Store With Leading Spaces [INFO] Step 1 - Open Home [INFO] Already Logged In [INFO] Home Page Opened [STEP] Step 2 - Search Store With Leading Spaces [STEP] Searching :    ama [STEP] Clicking Search Button [STEP] Waiting For Search Results [STEP] Search Results Loaded For :    ama [INFO] Step 3 - Verify Amazon Exists In Stores [STEP] Checking Store : Amazon.eg [STEP] Found Store : Amazon.eg [STEP] Store Found : Amazon.eg [INFO] Step 4 - Select Store [STEP] Selecting Store : Amazon.eg [STEP] Found : Amazon.eg [INFO] Step 5 - Verify Store Opened [STEP] Verifying Store Page [STEP] Store Verified [PASS] Search Store With Leading Spaces Passed"
+        >
+
+        <td>6</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Search Store with leading spaces
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_6')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_6" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="
+        margin-bottom:15px;
+        font-size:20px;
+        ">
+
+        📜 Execution Details
+
+        </h3>
+
+        
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Search Store With Leading Spaces
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 1 - Open Home
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Already Logged In
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Home Page Opened
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Step 2 - Search Store With Leading Spaces
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Searching :    ama
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Search Button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Waiting For Search Results
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Search Results Loaded For :    ama
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 3 - Verify Amazon Exists In Stores
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Checking Store : Amazon.eg
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Found Store : Amazon.eg
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Store Found : Amazon.eg
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 4 - Select Store
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Selecting Store : Amazon.eg
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Found : Amazon.eg
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 5 - Verify Store Opened
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Verifying Store Page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Store Verified
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Search Store With Leading Spaces Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        
+        <tr
+        class="test-row"
+        data-name="Search Store with multiple spaces"
+        data-status="PASS"
+        data-section="📝 Search"
+        data-override="No"
+        data-logs="[INFO] Running Search Store With Multiple Spaces [INFO] Step 1 - Open Home [INFO] Already Logged In [INFO] Home Page Opened [STEP] Step 2 - Search Store With Multiple Spaces [STEP] Searching : dream     2000 [STEP] Clicking Search Button [STEP] Waiting For Search Results [STEP] Search Results Loaded For : dream     2000 [INFO] Step 3 - Verify Dream 2000 Exists In Stores [STEP] Checking Store : Dream 2000 [STEP] Found Store : Dream 2000 [STEP] Store Found : Dream 2000 [INFO] Step 4 - Select Store [STEP] Selecting Store : Dream 2000 [STEP] Found : Dream 2000 [INFO] Step 5 - Verify Store Opened [STEP] Verifying Store Page [STEP] Store Verified [PASS] Search Store With Multiple Spaces Passed"
+        >
+
+        <td>7</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Search Store with multiple spaces
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_7')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_7" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="
+        margin-bottom:15px;
+        font-size:20px;
+        ">
+
+        📜 Execution Details
+
+        </h3>
+
+        
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Search Store With Multiple Spaces
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 1 - Open Home
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Already Logged In
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Home Page Opened
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Step 2 - Search Store With Multiple Spaces
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Searching : dream     2000
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Search Button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Waiting For Search Results
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Search Results Loaded For : dream     2000
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 3 - Verify Dream 2000 Exists In Stores
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Checking Store : Dream 2000
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Found Store : Dream 2000
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Store Found : Dream 2000
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 4 - Select Store
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Selecting Store : Dream 2000
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Found : Dream 2000
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 5 - Verify Store Opened
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Verifying Store Page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Store Verified
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Search Store With Multiple Spaces Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        
+        <tr
+        class="test-row"
+        data-name="Search Store with not case sensitive"
+        data-status="PASS"
+        data-section="📝 Search"
+        data-override="No"
+        data-logs="[INFO] Running Search Store Case Insensitive [INFO] Step 1 - Open Home [INFO] Already Logged In [INFO] Home Page Opened [STEP] Step 2 - Search Store With Uppercase [STEP] Searching : AMA [STEP] Clicking Search Button [STEP] Waiting For Search Results [STEP] Search Results Loaded For : AMA [INFO] Step 3 - Verify Amazon Exists In Stores [STEP] Checking Store : Amazon.eg [STEP] Found Store : Amazon.eg [STEP] Store Found : Amazon.eg [INFO] Step 4 - Select Store [STEP] Selecting Store : Amazon.eg [STEP] Found : Amazon.eg [INFO] Step 5 - Verify Store Opened [STEP] Verifying Store Page [STEP] Store Verified [PASS] Search Store Case Insensitive Passed"
+        >
+
+        <td>8</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Search Store with not case sensitive
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_8')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_8" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="
+        margin-bottom:15px;
+        font-size:20px;
+        ">
+
+        📜 Execution Details
+
+        </h3>
+
+        
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Search Store Case Insensitive
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 1 - Open Home
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Already Logged In
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Home Page Opened
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Step 2 - Search Store With Uppercase
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Searching : AMA
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Search Button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Waiting For Search Results
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Search Results Loaded For : AMA
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 3 - Verify Amazon Exists In Stores
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Checking Store : Amazon.eg
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Found Store : Amazon.eg
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Store Found : Amazon.eg
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 4 - Select Store
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Selecting Store : Amazon.eg
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Found : Amazon.eg
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 5 - Verify Store Opened
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Verifying Store Page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Store Verified
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Search Store Case Insensitive Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        
+        <tr
+        class="test-row"
+        data-name="Search Invalid Store"
+        data-status="PASS"
+        data-section="📝 Search"
+        data-override="No"
+        data-logs="[INFO] Running Search Invalid Store No Result Found [INFO] Step 1 - Search Invalid Store [STEP] Searching : abcdefgh123456 [STEP] Clicking Search Button [STEP] Waiting For Search Results [STEP] Search Results Loaded For : abcdefgh123456 [STEP] Step 2 - Waiting For No Products Message [PASS] Search Invalid Store No Result Found Passed"
+        >
+
+        <td>9</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Search Invalid Store
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_9')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_9" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="
+        margin-bottom:15px;
+        font-size:20px;
+        ">
+
+        📜 Execution Details
+
+        </h3>
+
+        
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Search Invalid Store No Result Found
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 1 - Search Invalid Store
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Searching : abcdefgh123456
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Search Button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Waiting For Search Results
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Search Results Loaded For : abcdefgh123456
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Step 2 - Waiting For No Products Message
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Search Invalid Store No Result Found Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        
+        <tr
+        class="test-row"
+        data-name="Search Store with trailing spaces"
+        data-status="PASS"
+        data-section="📝 Search"
+        data-override="No"
+        data-logs="[INFO] Running Search Store With Trailing Spaces [INFO] Step 1 - Open Home [INFO] Already Logged In [INFO] Home Page Opened [STEP] Step 2 - Search Store With Trailing Spaces [STEP] Searching : ama     [STEP] Clicking Search Button [STEP] Waiting For Search Results [STEP] Search Results Loaded For : ama     [INFO] Step 3 - Verify Amazon Exists In Stores [STEP] Checking Store : Amazon.eg [STEP] Found Store : Amazon.eg [STEP] Store Found : Amazon.eg [INFO] Step 4 - Select Store [STEP] Selecting Store : Amazon.eg [STEP] Found : Amazon.eg [INFO] Step 5 - Verify Store Opened [STEP] Verifying Store Page [STEP] Store Verified [PASS] Search Store With Trailing Spaces Passed"
+        >
+
+        <td>10</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Search Store with trailing spaces
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_10')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_10" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="
+        margin-bottom:15px;
+        font-size:20px;
+        ">
+
+        📜 Execution Details
+
+        </h3>
+
+        
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Search Store With Trailing Spaces
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 1 - Open Home
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Already Logged In
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Home Page Opened
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Step 2 - Search Store With Trailing Spaces
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Searching : ama    
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Search Button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Waiting For Search Results
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Search Results Loaded For : ama    
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 3 - Verify Amazon Exists In Stores
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Checking Store : Amazon.eg
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Found Store : Amazon.eg
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Store Found : Amazon.eg
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 4 - Select Store
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Selecting Store : Amazon.eg
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Found : Amazon.eg
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 5 - Verify Store Opened
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Verifying Store Page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Store Verified
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Search Store With Trailing Spaces Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        
+        <tr
+        class="test-row"
+        data-name="Search Arabic in English Version"
+        data-status="PASS"
+        data-section="📝 Search"
+        data-override="No"
+        data-logs="[INFO] Running Search Arabic In English Version [INFO] Step 1 - Verify English Search Placeholder [INFO] English Search Placeholder Verified [STEP] Step 2 - Search Arabic Store Name [STEP] Searching : امازون [STEP] Clicking Search Button [STEP] Waiting For Search Results [STEP] Search Results Loaded For : امازون [INFO] Step 3 - Verify Amazon In Stores Section [STEP] Checking Store : Amazon.eg [STEP] Found Store : Amazon.eg [STEP] Store Found : Amazon.eg [INFO] Step 4 - Open Amazon Store [STEP] Selecting Store : Amazon.eg [STEP] Found : Amazon.eg [INFO] Step 5 - Verify Amazon Store Page [STEP] Verifying Store Page [STEP] Store Verified [PASS] Search Arabic In English Version Passed"
+        >
+
+        <td>11</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Search Arabic in English Version
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_11')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_11" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="
+        margin-bottom:15px;
+        font-size:20px;
+        ">
+
+        📜 Execution Details
+
+        </h3>
+
+        
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Search Arabic In English Version
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 1 - Verify English Search Placeholder
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] English Search Placeholder Verified
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Step 2 - Search Arabic Store Name
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Searching : امازون
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Search Button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Waiting For Search Results
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Search Results Loaded For : امازون
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 3 - Verify Amazon In Stores Section
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Checking Store : Amazon.eg
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Found Store : Amazon.eg
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Store Found : Amazon.eg
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 4 - Open Amazon Store
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Selecting Store : Amazon.eg
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Found : Amazon.eg
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 5 - Verify Amazon Store Page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Verifying Store Page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Store Verified
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Search Arabic In English Version Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        
+        <tr
+        class="test-row"
+        data-name="Search English in Arabic Version"
+        data-status="PASS"
+        data-section="📝 Search"
+        data-override="No"
+        data-logs="[INFO] Running Search English In Arabic Version [INFO] Step 1 - Change Language To Arabic [INFO] Changing Language To Arabic [INFO] Arabic Language Loaded [STEP] Step 2 - Verify Arabic Search Placeholder [INFO] Arabic Search Placeholder Verified [INFO] Step 3 - Search English Store Name [STEP] Searching : amazon [STEP] Clicking Search Button [STEP] Waiting For Search Results [STEP] Search Results Loaded For : amazon [INFO] Step 4 - Verify Amazon In Stores Section [STEP] Checking Store : أمازون مصر [STEP] Found Store : أمازون مصر [STEP] Store Found : أمازون مصر [INFO] Amazon Egypt Found In Stores Section [INFO] Step 5 - Open Amazon Store [STEP] Selecting Store : أمازون مصر [STEP] Found : أمازون مصر [INFO] Step 6 - Verify Amazon Store Page [STEP] Verifying Store Page [STEP] Store Verified [INFO] Step 7 - Return Language To English [INFO] Changing Language To English [INFO] English Language Loaded [PASS] Search English In Arabic Version Passed"
+        >
+
+        <td>12</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Search English in Arabic Version
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_12')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_12" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="
+        margin-bottom:15px;
+        font-size:20px;
+        ">
+
+        📜 Execution Details
+
+        </h3>
+
+        
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Search English In Arabic Version
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 1 - Change Language To Arabic
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Changing Language To Arabic
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Arabic Language Loaded
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Step 2 - Verify Arabic Search Placeholder
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Arabic Search Placeholder Verified
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 3 - Search English Store Name
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Searching : amazon
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Clicking Search Button
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Waiting For Search Results
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Search Results Loaded For : amazon
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 4 - Verify Amazon In Stores Section
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Checking Store : أمازون مصر
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Found Store : أمازون مصر
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Store Found : أمازون مصر
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Amazon Egypt Found In Stores Section
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 5 - Open Amazon Store
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Selecting Store : أمازون مصر
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Found : أمازون مصر
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 6 - Verify Amazon Store Page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Verifying Store Page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Store Verified
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 7 - Return Language To English
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Changing Language To English
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] English Language Loaded
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Search English In Arabic Version Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        
+        <tr
+        class="test-row"
+        data-name="Search Filter by Brand"
+        data-status="PASS"
+        data-section="📝 Search"
+        data-override="No"
+        data-logs="[INFO] Running Search Filter - Brand Generic [INFO] Step 1 - Open Product Search [STEP] Opening Product Search Page [STEP] Product Search Page Opened [STEP] Step 2 - Search Amazon [STEP] Searching Product : amazon [STEP] Product Search Submitted [STEP] Search Results Loaded [INFO] Step 3 - Open Filters [STEP] Opening Filters [STEP] Filters Panel Opened [INFO] Step 4 - Select Brand : Generic [STEP] Selecting Brand : generic [STEP] Brand Selected : generic [INFO] Step 5 - Apply Filters [STEP] Applying Filters [STEP] Filters Applied [INFO] Step 6 - Verify Amazon.eg In Stores [STEP] Verifying Store : Amazon.eg [STEP] Found Store : Amazon.eg [PASS] Amazon.eg Found In Stores [INFO] Step 7 - Verify Products [STEP] Verifying Products : Brand=Generic, Store=Amazon.eg [STEP] Product 1 : Store=Amazon.eg | Brand=Generic [PASS] Product 1 Verified [STEP] Product 2 : Store=Amazon.eg | Brand=Generic [PASS] Product 2 Verified [STEP] Product 3 : Store=Amazon.eg | Brand=Generic [PASS] Product 3 Verified [STEP] Product 4 : Store=Amazon.eg | Brand=Generic [PASS] Product 4 Verified [STEP] Product 5 : Store=Amazon.eg | Brand=Generic [PASS] Product 5 Verified [PASS] 5 Product(s) Verified Successfully [PASS] Search Filter - Brand Generic Passed"
+        >
+
+        <td>13</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Search Filter by Brand
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_13')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_13" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="
+        margin-bottom:15px;
+        font-size:20px;
+        ">
+
+        📜 Execution Details
+
+        </h3>
+
+        
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Search Filter - Brand Generic
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 1 - Open Product Search
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Product Search Page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product Search Page Opened
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Step 2 - Search Amazon
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Searching Product : amazon
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product Search Submitted
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Search Results Loaded
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 3 - Open Filters
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Filters
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Filters Panel Opened
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 4 - Select Brand : Generic
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Selecting Brand : generic
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Brand Selected : generic
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 5 - Apply Filters
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Applying Filters
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Filters Applied
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 6 - Verify Amazon.eg In Stores
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Verifying Store : Amazon.eg
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Found Store : Amazon.eg
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Amazon.eg Found In Stores
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 7 - Verify Products
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Verifying Products : Brand=Generic, Store=Amazon.eg
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 1 : Store=Amazon.eg | Brand=Generic
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Product 1 Verified
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 2 : Store=Amazon.eg | Brand=Generic
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Product 2 Verified
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 3 : Store=Amazon.eg | Brand=Generic
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Product 3 Verified
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 4 : Store=Amazon.eg | Brand=Generic
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Product 4 Verified
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 5 : Store=Amazon.eg | Brand=Generic
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Product 5 Verified
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] 5 Product(s) Verified Successfully
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Search Filter - Brand Generic Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        
+        <tr
+        class="test-row"
+        data-name="Search Filter by Multiple Stores"
+        data-status="PASS"
+        data-section="📝 Search"
+        data-override="No"
+        data-logs="[INFO] Running Filter By Multiple Stores [STEP] Step 1 - Open Product Search Page [STEP] Opening Product Search Page [STEP] Product Search Page Opened [STEP] Step 2 - Search Amazon [STEP] Searching Product : amazon [STEP] Product Search Submitted [STEP] Search Results Loaded [INFO] Step 3 - Open Filters [STEP] Opening Filters [STEP] Filters Panel Opened [INFO] Step 4 - Select Amazon.eg [STEP] Selecting Store Filter : Amazon.eg [STEP] Store Option Found : Amazon.eg [PASS] Store Filter Selected : Amazon.eg [INFO] Step 5 - Select 2B Egypt [STEP] Selecting Store Filter : 2B Egypt [STEP] Store Option Found : 2B Egypt [PASS] Store Filter Selected : 2B Egypt [INFO] Step 6 - Apply Filters [STEP] Applying Filters [STEP] Filters Applied [INFO] Step 7 - Verify Stores [STEP] Verifying Stores : ['Amazon.eg', '2B Egypt'] [STEP] Found Store : Amazon.eg [PASS] Stores Validation Passed [INFO] Step 8 - Verify First 5 Products [STEP] Verifying First 5 Products [STEP] Product 1 : Store=Amazon.eg | Brand=Generic [STEP] Product 2 : Store=Amazon.eg | Brand=Generic [STEP] Product 3 : Store=Amazon.eg | Brand=Generic [STEP] Product 4 : Store=Amazon.eg | Brand=Generic [STEP] Product 5 : Store=Amazon.eg | Brand=innioasis [PASS] 5 Product(s) Belong To Allowed Stores [PASS] Filter By Multiple Stores Passed"
+        >
+
+        <td>14</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Search Filter by Multiple Stores
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_14')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_14" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="
+        margin-bottom:15px;
+        font-size:20px;
+        ">
+
+        📜 Execution Details
+
+        </h3>
+
+        
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Filter By Multiple Stores
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Step 1 - Open Product Search Page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Product Search Page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product Search Page Opened
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Step 2 - Search Amazon
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Searching Product : amazon
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product Search Submitted
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Search Results Loaded
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 3 - Open Filters
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Filters
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Filters Panel Opened
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 4 - Select Amazon.eg
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Selecting Store Filter : Amazon.eg
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Store Option Found : Amazon.eg
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Store Filter Selected : Amazon.eg
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 5 - Select 2B Egypt
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Selecting Store Filter : 2B Egypt
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Store Option Found : 2B Egypt
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Store Filter Selected : 2B Egypt
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 6 - Apply Filters
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Applying Filters
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Filters Applied
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 7 - Verify Stores
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Verifying Stores : ['Amazon.eg', '2B Egypt']
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Found Store : Amazon.eg
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Stores Validation Passed
+        </div>
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Step 8 - Verify First 5 Products
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Verifying First 5 Products
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 1 : Store=Amazon.eg | Brand=Generic
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 2 : Store=Amazon.eg | Brand=Generic
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 3 : Store=Amazon.eg | Brand=Generic
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 4 : Store=Amazon.eg | Brand=Generic
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 5 : Store=Amazon.eg | Brand=innioasis
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] 5 Product(s) Belong To Allowed Stores
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Filter By Multiple Stores Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        
+        <tr
+        class="test-row"
+        data-name="Search Filter by Price Range"
+        data-status="PASS"
+        data-section="📝 Search"
+        data-override="No"
+        data-logs="[INFO] Running Filter By Price Range [STEP] Step 1 - Open Product Search Page [STEP] Opening Product Search Page [STEP] Product Search Page Opened [STEP] Step 2 - Search Amazon [STEP] Searching Product : amazon [STEP] Product Search Submitted [STEP] Search Results Loaded [STEP] Step 3 - Open Filters [STEP] Opening Filters [STEP] Filters Panel Opened [STEP] Step 4 - Set Price Range : 200 - 1000 EGP [STEP] Setting Price Range : 200 - 1000 [STEP] Price Range Set Successfully : 200 - 1000 [STEP] Step 5 - Apply Filters [STEP] Applying Filters [STEP] Filters Applied [STEP] Step 6 - Verify First 10 Products Prices [STEP] Verifying First 10 Products Are Between 200 And 1000 [STEP] Product 1 Price : 262.36 EGP [PASS] Product 1 Price Verified : 262.36 EGP [STEP] Product 2 Price : 682.50 EGP [PASS] Product 2 Price Verified : 682.50 EGP [STEP] Product 3 Price : 200.00 EGP [PASS] Product 3 Price Verified : 200.00 EGP [STEP] Product 4 Price : 240.92 EGP [PASS] Product 4 Price Verified : 240.92 EGP [STEP] Product 5 Price : 550.00 EGP [PASS] Product 5 Price Verified : 550.00 EGP [STEP] Product 6 Price : 299.00 EGP [PASS] Product 6 Price Verified : 299.00 EGP [STEP] Product 7 Price : 879.00 EGP [PASS] Product 7 Price Verified : 879.00 EGP [STEP] Product 8 Price : 470.00 EGP [PASS] Product 8 Price Verified : 470.00 EGP [STEP] Product 9 Price : 490.00 EGP [PASS] Product 9 Price Verified : 490.00 EGP [STEP] Product 10 Price : 810.00 EGP [PASS] Product 10 Price Verified : 810.00 EGP [PASS] First 10 Products Are Within Price Range 200 - 1000 EGP [PASS] Filter By Price Range Passed"
+        >
+
+        <td>15</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Search Filter by Price Range
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_15')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_15" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="
+        margin-bottom:15px;
+        font-size:20px;
+        ">
+
+        📜 Execution Details
+
+        </h3>
+
+        
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Filter By Price Range
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Step 1 - Open Product Search Page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Product Search Page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product Search Page Opened
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Step 2 - Search Amazon
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Searching Product : amazon
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product Search Submitted
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Search Results Loaded
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Step 3 - Open Filters
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Filters
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Filters Panel Opened
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Step 4 - Set Price Range : 200 - 1000 EGP
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Setting Price Range : 200 - 1000
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Price Range Set Successfully : 200 - 1000
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Step 5 - Apply Filters
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Applying Filters
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Filters Applied
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Step 6 - Verify First 10 Products Prices
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Verifying First 10 Products Are Between 200 And 1000
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 1 Price : 262.36 EGP
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Product 1 Price Verified : 262.36 EGP
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 2 Price : 682.50 EGP
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Product 2 Price Verified : 682.50 EGP
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 3 Price : 200.00 EGP
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Product 3 Price Verified : 200.00 EGP
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 4 Price : 240.92 EGP
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Product 4 Price Verified : 240.92 EGP
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 5 Price : 550.00 EGP
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Product 5 Price Verified : 550.00 EGP
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 6 Price : 299.00 EGP
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Product 6 Price Verified : 299.00 EGP
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 7 Price : 879.00 EGP
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Product 7 Price Verified : 879.00 EGP
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 8 Price : 470.00 EGP
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Product 8 Price Verified : 470.00 EGP
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 9 Price : 490.00 EGP
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Product 9 Price Verified : 490.00 EGP
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 10 Price : 810.00 EGP
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Product 10 Price Verified : 810.00 EGP
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] First 10 Products Are Within Price Range 200 - 1000 EGP
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Filter By Price Range Passed
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        
+        <tr
+        class="test-row"
+        data-name="Search Filter by Price Low to High"
+        data-status="PASS"
+        data-section="📝 Search"
+        data-override="No"
+        data-logs="[INFO] Running Filter Price Low To High [STEP] Step 1 - Open Product Search Page [STEP] Opening Product Search Page [STEP] Product Search Page Opened [STEP] Step 2 - Search Amazon [STEP] Searching Product : amazon [STEP] Product Search Submitted [STEP] Search Results Loaded [STEP] Step 3 - Open Filters [STEP] Opening Filters [STEP] Filters Panel Opened [STEP] Step 4 - Select Price Low To High [STEP] Selecting Sort : asc [STEP] Sort Selected : asc [STEP] Step 5 - Apply Filters [STEP] Applying Filters [STEP] Filters Applied [STEP] Step 6 - Verify First 10 Products Price Order [STEP] Checking First 10 Products Price Order : asc [STEP] Product 1 Price : 40.00 EGP [STEP] Product 2 Price : 40.00 EGP [STEP] Product 3 Price : 50.00 EGP [STEP] Product 4 Price : 50.00 EGP [STEP] Product 5 Price : 50.00 EGP [STEP] Product 6 Price : 61.95 EGP [STEP] Product 7 Price : 62.00 EGP [STEP] Product 8 Price : 63.00 EGP [STEP] Product 9 Price : 71.00 EGP [STEP] Product 10 Price : 78.75 EGP [PASS] First 10 Products Are Correctly Sorted : asc [PASS] Filter Price Low To High Verified Successfully"
+        >
+
+        <td>16</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Search Filter by Price Low to High
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_16')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_16" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="
+        margin-bottom:15px;
+        font-size:20px;
+        ">
+
+        📜 Execution Details
+
+        </h3>
+
+        
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Filter Price Low To High
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Step 1 - Open Product Search Page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Product Search Page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product Search Page Opened
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Step 2 - Search Amazon
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Searching Product : amazon
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product Search Submitted
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Search Results Loaded
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Step 3 - Open Filters
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Filters
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Filters Panel Opened
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Step 4 - Select Price Low To High
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Selecting Sort : asc
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Sort Selected : asc
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Step 5 - Apply Filters
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Applying Filters
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Filters Applied
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Step 6 - Verify First 10 Products Price Order
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Checking First 10 Products Price Order : asc
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 1 Price : 40.00 EGP
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 2 Price : 40.00 EGP
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 3 Price : 50.00 EGP
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 4 Price : 50.00 EGP
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 5 Price : 50.00 EGP
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 6 Price : 61.95 EGP
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 7 Price : 62.00 EGP
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 8 Price : 63.00 EGP
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 9 Price : 71.00 EGP
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 10 Price : 78.75 EGP
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] First 10 Products Are Correctly Sorted : asc
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Filter Price Low To High Verified Successfully
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        
+        <tr
+        class="test-row"
+        data-name="Search Filter by Price High to Low"
+        data-status="PASS"
+        data-section="📝 Search"
+        data-override="No"
+        data-logs="[INFO] Running Filter Price High To Low [STEP] Step 1 - Open Product Search Page [STEP] Opening Product Search Page [STEP] Product Search Page Opened [STEP] Step 2 - Search Amazon [STEP] Searching Product : amazon [STEP] Product Search Submitted [STEP] Search Results Loaded [STEP] Step 3 - Open Filters [STEP] Opening Filters [STEP] Filters Panel Opened [STEP] Step 4 - Select Price High To Low [STEP] Selecting Sort : desc [STEP] Sort Selected : desc [STEP] Step 5 - Apply Filters [STEP] Applying Filters [STEP] Filters Applied [STEP] Step 6 - Verify First 10 Products Price Order [STEP] Checking First 10 Products Price Order : desc [STEP] Product 1 Price : 45450.00 EGP [STEP] Product 2 Price : 45450.00 EGP [STEP] Product 3 Price : 38000.00 EGP [STEP] Product 4 Price : 27788.00 EGP [STEP] Product 5 Price : 24499.99 EGP [STEP] Product 6 Price : 14899.00 EGP [STEP] Product 7 Price : 12700.00 EGP [STEP] Product 8 Price : 12621.00 EGP [STEP] Product 9 Price : 10999.00 EGP [STEP] Product 10 Price : 10066.00 EGP [PASS] First 10 Products Are Correctly Sorted : desc [PASS] Filter Price High To Low Verified Successfully"
+        >
+
+        <td>17</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Search Filter by Price High to Low
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_17')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_17" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="
+        margin-bottom:15px;
+        font-size:20px;
+        ">
+
+        📜 Execution Details
+
+        </h3>
+
+        
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Filter Price High To Low
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Step 1 - Open Product Search Page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Product Search Page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product Search Page Opened
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Step 2 - Search Amazon
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Searching Product : amazon
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product Search Submitted
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Search Results Loaded
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Step 3 - Open Filters
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Filters
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Filters Panel Opened
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Step 4 - Select Price High To Low
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Selecting Sort : desc
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Sort Selected : desc
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Step 5 - Apply Filters
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Applying Filters
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Filters Applied
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Step 6 - Verify First 10 Products Price Order
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Checking First 10 Products Price Order : desc
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 1 Price : 45450.00 EGP
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 2 Price : 45450.00 EGP
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 3 Price : 38000.00 EGP
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 4 Price : 27788.00 EGP
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 5 Price : 24499.99 EGP
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 6 Price : 14899.00 EGP
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 7 Price : 12700.00 EGP
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 8 Price : 12621.00 EGP
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 9 Price : 10999.00 EGP
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 10 Price : 10066.00 EGP
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] First 10 Products Are Correctly Sorted : desc
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Filter Price High To Low Verified Successfully
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+        
+        <tr
+        class="test-row"
+        data-name="Search Filter by Discount"
+        data-status="PASS"
+        data-section="📝 Search"
+        data-override="No"
+        data-logs="[INFO] Running Filter By Discount [STEP] Step 1 - Open Product Search Page [STEP] Opening Product Search Page [STEP] Product Search Page Opened [STEP] Step 2 - Search Amazon [STEP] Searching Product : amazon [STEP] Product Search Submitted [STEP] Search Results Loaded [STEP] Step 3 - Open Filters [STEP] Opening Filters [STEP] Filters Panel Opened [STEP] Step 4 - Select Discount Filter [STEP] Selecting Discount Filter [STEP] Discount Filter Selected [STEP] Step 5 - Apply Filters [STEP] Applying Filters [STEP] Filters Applied [STEP] Step 6 - Verify First 10 Discounted Products [STEP] Checking First 10 Discounted Products [STEP] Product 1 | Old: 840.00 EGP | New: 810.00 EGP | Discount: 3.57% [STEP] Product Name : Amazon Brand- Movian 4 lockers MDF Wood Shelf/Storage Furniture/Cube Bookcase CX-4, Beige, 41.5 x 29 x 116.5 cm [STEP] Product 2 | Old: 3739.00 EGP | New: 3249.00 EGP | Discount: 13.11% [STEP] Product Name : Amazon Echo Pop (1st Gen, 2023 Release) Full Sound Compact Smart Speaker With Alexa [STEP] Product 3 | Old: 9499.00 EGP | New: 6799.00 EGP | Discount: 28.42% [STEP] Product Name : Amazon Kindle Paperwhite (16 GB) – Our fastest Kindle ever, with new 7&quot; glare-free display, and weeks of battery life – Black [STEP] Product 4 | Old: 10499.00 EGP | New: 7499.00 EGP | Discount: 28.57% [STEP] Product Name : Amazon Kindle Paperwhite Signature Edition (32 GB) – Our fastest Kindle with an auto-adjusting front light and weeks of battery life – Metallic Black [STEP] Product 5 | Old: 131.10 EGP | New: 111.44 EGP | Discount: 15% [STEP] Product Name : Amazon Magic Hair Removal (Hair Removal & Heel Sanding) - Nano Crystal Technology for Easy and Safe Hair Removal - Unisex - Reduces Hair and - Generic [STEP] Product 6 | Old: 7089.00 EGP | New: 6159.00 EGP | Discount: 13.12% [STEP] Product Name : Amazon Speaker Echo Spot With Screen, 2.5&quot; Screen, Voice-Control-Enabled, Bluetooth and Wi-Fi Built-In - Black [STEP] Product 7 | Old: 1419.00 EGP | New: 1149.23 EGP | Discount: 19.01% [STEP] Product Name : Amazon Unbound: Jeff Bezos and the Invention of a Global Empire [STEP] Product 8 | Old: 218.73 EGP | New: 178.80 EGP | Discount: 18.26% [STEP] Product Name : Amazon portable blender cup,electric usb juicer blender,mini blender portable blender for shakes and smoothies, juice,380ml, six blades great for mixing,light (multicolor) [STEP] Product 9 | Old: 135.47 EGP | New: 121.72 EGP | Discount: 10.15% [STEP] Product Name : Beautiful on Amazon (Square Rosary Ring) - Generic [STEP] Product 10 | Old: 700.00 EGP | New: 630.00 EGP | Discount: 10% [STEP] Product Name : Brand Amazon - Movian, 3 Compartment Storage Shelf / Storage Unit with Shelves / Wooden Storage Unit / Library, Office, Living Room, Bedroom, Entrance - Basic Wood Shelf - CX-3 - Light Brown [PASS] First 10 Products Have Valid Discounts [PASS] Filter By Discount Verified Successfully"
+        >
+
+        <td>18</td>
+
+        <td style="text-align:left;font-weight:500;">
+            Search Filter by Discount
+        </td>
+
+        <td>
+            
+                    <span class="badge-pass">
+                    PASS
+                    </span>
+                    
+        </td>
+
+        <td>
+            <span style="color:#999;">—</span>
+        </td>
+
+        <td>
+            <button
+                onclick="toggleDetails('details_18')"
+                style="
+                    background:#005bea;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:8px;
+                    cursor:pointer;
+                ">
+                Show
+            </button>
+        </td>
+
+        </tr>
+
+        <tr id="details_18" style="display:none;background:#fafafa;">
+
+        <td colspan="5">
+
+        <div style="
+        padding:20px;
+        text-align:left;
+        ">
+
+        <h3 style="
+        margin-bottom:15px;
+        font-size:20px;
+        ">
+
+        📜 Execution Details
+
+        </h3>
+
+        
+
+        
+
+        <div style="
+        background:#1e1e1e;
+        padding:15px;
+        border-radius:10px;
+        overflow:auto;
+        ">
+
+        
+        <div style="
+        color:#00bcd4;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [INFO] Running Filter By Discount
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Step 1 - Open Product Search Page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Product Search Page
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product Search Page Opened
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Step 2 - Search Amazon
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Searching Product : amazon
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product Search Submitted
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Search Results Loaded
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Step 3 - Open Filters
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Opening Filters
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Filters Panel Opened
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Step 4 - Select Discount Filter
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Selecting Discount Filter
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Discount Filter Selected
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Step 5 - Apply Filters
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Applying Filters
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Filters Applied
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Step 6 - Verify First 10 Discounted Products
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Checking First 10 Discounted Products
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 1 | Old: 840.00 EGP | New: 810.00 EGP | Discount: 3.57%
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product Name : Amazon Brand- Movian 4 lockers MDF Wood Shelf/Storage Furniture/Cube Bookcase CX-4, Beige, 41.5 x 29 x 116.5 cm
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 2 | Old: 3739.00 EGP | New: 3249.00 EGP | Discount: 13.11%
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product Name : Amazon Echo Pop (1st Gen, 2023 Release) Full Sound Compact Smart Speaker With Alexa
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 3 | Old: 9499.00 EGP | New: 6799.00 EGP | Discount: 28.42%
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product Name : Amazon Kindle Paperwhite (16 GB) – Our fastest Kindle ever, with new 7" glare-free display, and weeks of battery life – Black
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 4 | Old: 10499.00 EGP | New: 7499.00 EGP | Discount: 28.57%
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product Name : Amazon Kindle Paperwhite Signature Edition (32 GB) – Our fastest Kindle with an auto-adjusting front light and weeks of battery life – Metallic Black
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 5 | Old: 131.10 EGP | New: 111.44 EGP | Discount: 15%
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product Name : Amazon Magic Hair Removal (Hair Removal & Heel Sanding) - Nano Crystal Technology for Easy and Safe Hair Removal - Unisex - Reduces Hair and - Generic
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 6 | Old: 7089.00 EGP | New: 6159.00 EGP | Discount: 13.12%
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product Name : Amazon Speaker Echo Spot With Screen, 2.5" Screen, Voice-Control-Enabled, Bluetooth and Wi-Fi Built-In - Black
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 7 | Old: 1419.00 EGP | New: 1149.23 EGP | Discount: 19.01%
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product Name : Amazon Unbound: Jeff Bezos and the Invention of a Global Empire
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 8 | Old: 218.73 EGP | New: 178.80 EGP | Discount: 18.26%
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product Name : Amazon portable blender cup,electric usb juicer blender,mini blender portable blender for shakes and smoothies, juice,380ml, six blades great for mixing,light (multicolor)
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 9 | Old: 135.47 EGP | New: 121.72 EGP | Discount: 10.15%
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product Name : Beautiful on Amazon (Square Rosary Ring) - Generic
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product 10 | Old: 700.00 EGP | New: 630.00 EGP | Discount: 10%
+        </div>
+        
+        <div style="
+        color:#7b1fa2;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [STEP] Product Name : Brand Amazon - Movian, 3 Compartment Storage Shelf / Storage Unit with Shelves / Wooden Storage Unit / Library, Office, Living Room, Bedroom, Entrance - Basic Wood Shelf - CX-3 - Light Brown
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] First 10 Products Have Valid Discounts
+        </div>
+        
+        <div style="
+        color:#28a745;
+        margin-bottom:6px;
+        font-family:Consolas, monospace;
+        white-space:pre-wrap;
+        ">
+        [PASS] Filter By Discount Verified Successfully
+        </div>
+        
+
+        </div>
+
+        </div>
+
+        </td>
+
+        </tr>
+        
+
+                </tbody>
+
+                </table>
+
+                </div>
+
+                <div class="footer">
+
+                    <hr style="margin-bottom:20px;border:none;border-top:1px solid #ddd;">
+
+                    <p>
+                        © 2026 <strong>WaffarX Automation Framework</strong>
+                    </p>
+
+                    <p>
+                        📅 Generated on
+                        <strong>18 Aug 2026 - 01:15:55 AM</strong>
+                    </p>
+
+                    <p style="margin-top:10px;font-size:15px;color:#444;">
+                        👨‍💻 Tester :
+                        <strong style="color:#005bea;">
+                            Nohair Gamal
+                        </strong>
+                    </p>
+
+                </div>
+
+        </div>
+        <script>
+
+        function toggleDetails(id){
+
+            const row = document.getElementById(id);
+
+            if(row.style.display === "table-row"){
+
+                row.style.display = "none";
+
+            }else{
+
+                row.style.display = "table-row";
+
+            }
+
+        }
+
+
+
+
+
+        const testsTable =document.querySelectorAll(".table-box")[1];
+        const searchBox = document.getElementById("searchBox");
+        const statusFilter = document.getElementById("statusFilter");
+        const sectionFilter = document.getElementById("sectionFilter");
+        const searchMode =
+        document.getElementById("searchMode");
+        const counter = document.getElementById("filterCounter");
+
+        const rows = document.querySelectorAll(".test-row");
+
+        const sections = new Set();
+
+        rows.forEach(row => {
+
+            const section = row.dataset.section || "";
+
+            if (section) {
+
+                sections.add(section);
+
+            }
+
+        });
+
+        sections.forEach(section => {
+
+            const option = document.createElement("option");
+
+            option.value = section;
+
+            option.textContent = section;
+
+            sectionFilter.appendChild(option);
+
+        });
+
+        function filterTests(){
+
+            const text = searchBox.value.toLowerCase();
+
+            const status = statusFilter.value;
+
+            const section = sectionFilter.value;
+            const mode =
+            searchMode.value;
+
+            let visible = 0;
+            testsTable.classList.add(
+                "table-loading"
+                );
+            rows.forEach(row=>{
+
+                row.classList.add("animate");
+
+            });
+
+            rows.forEach(row => {
+
+                let matchName = false;
+
+                if(mode === "name"){
+
+                    matchName =
+                        row.dataset.name
+                        .toLowerCase()
+                        .includes(text);
+
+                }
+
+                else if(mode === "logs"){
+
+                    matchName =
+                        row.dataset.logs
+                        .toLowerCase()
+                        .includes(text);
+
+                }
+
+                else{
+
+                    matchName =
+
+                        row.dataset.name
+                        .toLowerCase()
+                        .includes(text)
+
+                        ||
+
+                        row.dataset.logs
+                        .toLowerCase()
+                        .includes(text);
+
+                }
+
+                const matchStatus =
+                    status === "All" ||
+                    row.dataset.status === status;
+
+                const matchSection =
+                    section === "All" ||
+                    row.dataset.section === section;
+
+                if(matchName && matchStatus && matchSection){
+
+                    row.style.display = "";
+                    setTimeout(()=>{
+
+                        row.classList.remove(
+                            "animate"
+                        );
+
+                    },visible*40);
+
+                    visible++;
+
+                }
+
+                else{
+
+                    row.classList.add(
+                        "animate"
+                    );
+
+                    row.style.display = "none";
+
+                }
+
+            });
+
+            counter.textContent =
+            `Showing ${visible} Tests`;
+
+            setTimeout(()=>{
+
+            testsTable.classList.remove(
+            "table-loading"
+            );
+
+            },180);
+
+        }
+
+        searchBox.addEventListener(
+            "keyup",
+            filterTests
+        );
+        searchMode.addEventListener(
+            "change",
+            filterTests
+        );
+        searchMode.addEventListener("change",()=>{
+
+            if(searchMode.value==="name"){
+
+                searchBox.placeholder =
+                "🔍 Search Test Name...";
+
+            }
+
+            else if(searchMode.value==="logs"){
+
+                searchBox.placeholder =
+                "🔍 Search Logs...";
+
+            }
+
+            else{
+
+                searchBox.placeholder =
+                "🔍 Search Tests & Logs...";
+
+            }
+
+        });
+
+        statusFilter.addEventListener(
+            "change",
+            filterTests
+        );
+
+        sectionFilter.addEventListener(
+        "change",
+        () => {
+
+            summaryRows.forEach(row => {
+
+                row.classList.remove(
+                    "section-summary-selected"
+                );
+
+                if (
+                    row.dataset.section ===
+                    sectionFilter.value
+                ) {
+
+                    row.classList.add(
+                        "section-summary-selected"
+                    );
+
+                }
+
+            });
+
+            filterTests();
+
+        }
+    );
+        const summaryRows =
+
+        document.querySelectorAll(
+        ".section-summary-row"
+        );
+
+        summaryRows.forEach(row=>{
+
+        row.addEventListener("click",(e)=>{
+
+            // Remove previous selection
+            summaryRows.forEach(r=>
+                r.classList.remove(
+                    "section-summary-selected"
+                )
+            );
+
+            row.classList.add(
+                "section-summary-selected"
+            );
+
+            // ===========================
+            // Ripple Effect
+            // ===========================
+
+            const ripple =
+            document.createElement("span");
+
+            ripple.className = "ripple";
+
+            const rect =
+            row.getBoundingClientRect();
+
+            const size =
+            Math.max(
+                rect.width,
+                rect.height
+            );
+
+            ripple.style.width =
+            size + "px";
+
+            ripple.style.height =
+            size + "px";
+
+            ripple.style.left =
+            (e.clientX - rect.left - size/2)
+            + "px";
+
+            ripple.style.top =
+            (e.clientY - rect.top - size/2)
+            + "px";
+
+            row.appendChild(ripple);
+
+            ripple.addEventListener(
+                "animationend",
+                ()=>ripple.remove()
+            );
+
+            sectionFilter.value =
+                row.dataset.section;
+
+            filterTests();
+
+        });
+
+    });
+
+        filterTests();
+        </script>
+
+        </body>
+
+        </html>
+        
